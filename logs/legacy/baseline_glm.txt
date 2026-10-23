@@ -1,0 +1,5 @@
+provider=glm  settings=human-plus-generated,human-only  workers=8  limit=全部
+
+============================================================
+    pointwise 50/308  (错误=0)
+    pointwise 100/308  (错误=0)

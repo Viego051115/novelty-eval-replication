@@ -1,0 +1,3 @@
+provider=kimi  settings=human-plus-generated,human-only  workers=1  limit=16
+
+============================================================

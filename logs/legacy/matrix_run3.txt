@@ -1,0 +1,51 @@
+
+>>> p4b/human-plus-generated/ref — 已完成，复用结果
+    → strict=0.6623 soft=0.7045 tie=0.084 (0s)
+
+>>> p4b/human-plus-generated/P1 — 已完成，复用结果
+    → strict=0.5714 soft=0.6104 tie=0.078 (0s)
+
+>>> p4b/human-plus-generated/P2 — 已完成，复用结果
+    → strict=0.6623 soft=0.7175 tie=0.110 (0s)
+
+>>> p4b/human-plus-generated/P3 — 已完成，复用结果
+    → strict=0.6688 soft=0.7403 tie=0.143 (0s)
+
+>>> p4b/human-plus-generated/P4 — 已完成，复用结果
+    → strict=0.4221 soft=0.5195 tie=0.195 (0s)
+
+>>> p4b/human-plus-generated/P5 — 已完成，复用结果
+    → strict=0.5000 soft=0.5292 tie=0.058 (0s)
+
+>>> p4b/human-plus-generated/noagg — 已完成，复用结果
+    → strict=0.6234 soft=0.7045 tie=0.162 (0s)
+
+>>> p4b/human-plus-generated/plan — 已完成，复用结果
+    → strict=0.6429 soft=0.6786 tie=0.071 (0s)
+
+>>> p4b/human-only/ref — 已完成，复用结果
+    → strict=0.8117 soft=0.8377 tie=0.052 (0s)
+
+>>> p4b/human-only/P1 — 已完成，复用结果
+    → strict=0.7857 soft=0.8084 tie=0.045 (0s)
+
+>>> p4b/human-only/P2 — 已完成，复用结果
+    → strict=0.7987 soft=0.8149 tie=0.032 (0s)
+
+>>> p4b/human-only/P3 — 已完成，复用结果
+    → strict=0.7792 soft=0.8182 tie=0.078 (0s)
+
+>>> p4b/human-only/P4 — 已完成，复用结果
+    → strict=0.6818 soft=0.7468 tie=0.130 (0s)
+
+>>> p4b/human-only/P5 | P5 | human-only_pairwise.parquet | agg=True
+    → strict=0.7338 soft=0.7695 tie=0.071 (117s)
+
+>>> p4b/human-only/noagg | ref | human-only_pairwise.parquet | agg=False
+    → strict=0.7532 soft=0.8117 tie=0.117 (150s)
+
+>>> p4b/human-only/plan | ref | human-only_pairwise_plan.parquet | agg=True
+    → strict=0.7922 soft=0.8214 tie=0.058 (454s)
+
+>>> p4a/human-plus-generated/ref_pw | ref_pw | human-plus-generated_pointwise.parquet | agg=True
+      200/308 (errors=0)

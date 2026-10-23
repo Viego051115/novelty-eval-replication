@@ -1,0 +1,256 @@
+{
+  "snapshot_utc": "2026-10-23T06:25:07.529730+00:00",
+  "configurations": [
+    {
+      "file": "deepseek_fig12_human-plus-generated_P3_plan.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig12_human-plus-generated_P4_plan.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig12_human-plus-generated_P5_plan.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig13_gpt-5.1_pair.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig13_gpt-5.1_point.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig13_gpt-5.4_pair.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig13_gpt-5.4_point.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 307,
+      "invalid_vote_items": [],
+      "complete_and_valid": false
+    },
+    {
+      "file": "deepseek_fig13_gpt-5_pair.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_fig13_gpt-5_point.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-only_noagg.jsonl",
+      "expected_items": 299,
+      "saved_unique_items": 299,
+      "invalid_vote_items": [
+        262
+      ],
+      "complete_and_valid": false
+    },
+    {
+      "file": "deepseek_p4a_human-only_P1_pw.jsonl",
+      "expected_items": 299,
+      "saved_unique_items": 299,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-only_P2_pw.jsonl",
+      "expected_items": 299,
+      "saved_unique_items": 299,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-only_plan.jsonl",
+      "expected_items": 299,
+      "saved_unique_items": 299,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-only_ref_pw.jsonl",
+      "expected_items": 299,
+      "saved_unique_items": 299,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-plus-generated_noagg.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-plus-generated_P1_pw.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [
+        132
+      ],
+      "complete_and_valid": false
+    },
+    {
+      "file": "deepseek_p4a_human-plus-generated_P2_pw.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-plus-generated_plan.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4a_human-plus-generated_ref_pw.jsonl",
+      "expected_items": 308,
+      "saved_unique_items": 308,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_noagg.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_P1.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_P2.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_P3.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_P4.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_P5.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_plan.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-only_ref.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_noagg.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_P1.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_P2.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_P3.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_P4.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [
+        114
+      ],
+      "complete_and_valid": false
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_P5.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_plan.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    },
+    {
+      "file": "deepseek_p4b_human-plus-generated_ref.jsonl",
+      "expected_items": 154,
+      "saved_unique_items": 154,
+      "invalid_vote_items": [],
+      "complete_and_valid": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+provider=deepseek  settings=human-only  workers=12  limit=全部
+
+============================================================
+    pointwise 50/299  (错误=0)
+    pointwise 100/299  (错误=0)
+    pointwise 150/299  (错误=0)
+    pointwise 200/299  (错误=0)
+    pointwise 250/299  (错误=0)
+[human-only] pointwise  macro-F1=0.7252  (novel=0.7133 / not=0.7372)  未解析=0  (371s)
+    pairwise 30/154  (错误=0)
+    pairwise 60/154  (错误=0)
+    pairwise 90/154  (错误=0)
+    pairwise 120/154  (错误=0)
+    pairwise 150/154  (错误=0)
+[human-only] pairwise  strict-acc=0.7987  (123/154)  平局=8  (373s)
+------------------------------------------------------------

@@ -1,0 +1,70 @@
+
+>>> p4b/human-plus-generated/ref | ref | human-plus-generated_pairwise.parquet | agg=True
+    → strict=0.6623 soft=0.7045 tie=0.084 (210s)
+
+>>> p4b/human-plus-generated/P1 | P1 | human-plus-generated_pairwise.parquet | agg=True
+    → strict=0.5714 soft=0.6104 tie=0.078 (189s)
+
+>>> p4b/human-plus-generated/P2 | P2 | human-plus-generated_pairwise.parquet | agg=True
+    → strict=0.6623 soft=0.7175 tie=0.110 (169s)
+
+>>> p4b/human-plus-generated/P3 | P3 | human-plus-generated_pairwise.parquet | agg=True
+    → strict=0.6688 soft=0.7403 tie=0.143 (36s)
+
+>>> p4b/human-plus-generated/P4 | P4 | human-plus-generated_pairwise.parquet | agg=True
+    → strict=0.4221 soft=0.5195 tie=0.195 (38s)
+
+>>> p4b/human-plus-generated/P5 | P5 | human-plus-generated_pairwise.parquet | agg=True
+    → strict=0.5000 soft=0.5292 tie=0.058 (36s)
+
+>>> p4b/human-plus-generated/noagg | ref | human-plus-generated_pairwise.parquet | agg=False
+    → strict=0.6234 soft=0.7045 tie=0.162 (67s)
+
+>>> p4b/human-plus-generated/plan | ref | human-plus-generated_pairwise_plan.parquet | agg=True
+    → strict=0.6429 soft=0.6786 tie=0.071 (214s)
+
+>>> p4b/human-only/ref | ref | human-only_pairwise.parquet | agg=True
+    → strict=0.8117 soft=0.8377 tie=0.052 (178s)
+
+>>> p4b/human-only/P1 | P1 | human-only_pairwise.parquet | agg=True
+    → strict=0.7857 soft=0.8084 tie=0.045 (164s)
+
+>>> p4b/human-only/P2 | P2 | human-only_pairwise.parquet | agg=True
+    → strict=0.7987 soft=0.8149 tie=0.032 (152s)
+
+>>> p4b/human-only/P3 | P3 | human-only_pairwise.parquet | agg=True
+    → strict=0.7792 soft=0.8182 tie=0.078 (41s)
+
+>>> p4b/human-only/P4 | P4 | human-only_pairwise.parquet | agg=True
+    → strict=0.6818 soft=0.7468 tie=0.130 (61s)
+
+>>> p4b/human-only/P5 | P5 | human-only_pairwise.parquet | agg=True
+    ! RuntimeError('[deepseek] HTTP 429: {"error":{"message":"Too many requests. Your current concurrency is 6, which exceeds 
+    ! RuntimeError('[deepseek] HTTP 429: {"error":{"message":"Too many requests. Your current concurrency is 6, which exceeds 
+    → strict=0.7078 soft=0.7630 tie=0.110 (97s)
+
+>>> p4b/human-only/noagg | ref | human-only_pairwise.parquet | agg=False
+    ! RuntimeError('[deepseek] HTTP 402: {"error":{"message":"Insufficient Balance (request_id: 360cd37e-8db1-4af7-9e12-d6d323
+    ! RuntimeError('[deepseek] HTTP 402: {"error":{"message":"Insufficient Balance (request_id: 2fa3bb21-104c-42fa-91f2-3bba0a
+    → strict=0.1558 soft=0.5649 tie=0.818 (53s)
+
+>>> p4b/human-only/plan | ref | human-only_pairwise_plan.parquet | agg=True
+    ! RuntimeError('[deepseek] HTTP 402: {"error":{"message":"Insufficient Balance (request_id: cad69eb2-31c4-4222-8b69-2dab95
+    ! RuntimeError('[deepseek] HTTP 402: {"error":{"message":"Insufficient Balance (request_id: 8df2cd49-3e1a-48cb-99f1-138be5
+    → strict=0.0000 soft=0.5000 tie=1.000 (4s)
+
+>>> p4a/human-plus-generated/ref_pw | ref_pw | human-plus-generated_pointwise.parquet | agg=True
+    ! RuntimeError('[deepseek] HTTP 402: {"error":{"message":"Insufficient Balance (request_id: 3214291b-d716-4738-920a-c9834b
+    ! RuntimeError('[deepseek] HTTP 402: {"error":{"message":"Insufficient Balance (request_id: e0e2c9e4-1cf8-4dec-bf54-f32978
+      200/308 (errors=200)
+Traceback (most recent call last):
+  File "C:\Users\24278\Desktop\agent论文\run_matrix.py", line 178, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\24278\Desktop\agent论文\run_matrix.py", line 156, in main
+    go(f"p4a/{s}/{pk}", "point", pk, f"data/{s}_pointwise.parquet")
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\24278\Desktop\agent论文\run_matrix.py", line 140, in go
+    print(f"    → macroF1={m['macro_f1']:.4f} ({m['secs']}s)", flush=True)
+                          ^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__

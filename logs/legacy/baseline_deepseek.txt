@@ -1,0 +1,25 @@
+provider=deepseek  settings=human-plus-generated,human-only  workers=12  limit=全部
+
+============================================================
+    pointwise 50/308  (错误=0)
+    pointwise 100/308  (错误=0)
+    pointwise 150/308  (错误=0)
+    pointwise 200/308  (错误=0)
+    pointwise 250/308  (错误=0)
+    pointwise 300/308  (错误=0)
+[human-plus-generated] pointwise  macro-F1=0.7914  (novel=0.7623 / not=0.8205)  未解析=0  (399s)
+    pairwise 30/154  (错误=0)
+    pairwise 60/154  (错误=0)
+    pairwise 90/154  (错误=0)
+    pairwise 120/154  (错误=0)
+    pairwise 150/154  (错误=0)
+[human-plus-generated] pairwise  strict-acc=0.5974  (92/154)  平局=20  (385s)
+------------------------------------------------------------
+    pointwise 50/299  (错误=0)
+    pointwise 100/299  (错误=0)
+    pointwise 150/299  (错误=0)
+    pointwise 200/299  (错误=0)
+    pointwise 250/299  (错误=0)
+[human-only] pointwise  macro-F1=0.7154  (novel=0.7059 / not=0.7249)  未解析=0  (342s)
+    pairwise 30/154  (错误=0)
+    pairwise 60/154  (错误=0)

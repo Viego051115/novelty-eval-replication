@@ -23,7 +23,7 @@ Does novelty judging remain sensitive to prompt wording and input distribution w
 | `run_matrix.py` | Legacy driver for the agreed 37-configuration matrix |
 | `finish_fig13.py` | Item/vote-level checkpointed generator-source continuation |
 | `results/deepseek_*.jsonl` | Item indices, labels, predictions and votes |
-| `results/fig13_api_responses.jsonl` | Recent final response texts, timestamps, model IDs and token usage |
+| `results/fig13_api_responses.jsonl.gz` | Recent final response texts, timestamps, model IDs and token usage |
 | `logs/legacy/` | Historical logs; may include interrupted or failed runs |
 | `docs/` | Audit and protocol limitations |
 
@@ -48,7 +48,9 @@ This repository records exploratory replication work. Results are not a validate
 
 - Sternlicht et al., *Old Ideas, Novel Problems: The Instability of LLM-Based Novelty Evaluation*, arXiv:2610.02022v1: https://arxiv.org/abs/2610.02022
 - Original dataset: https://huggingface.co/datasets/noystl/novelty-judge-bench
-- Dataset license reported by its upstream card: CC BY 4.0. Retain attribution and verify the upstream card before redistribution outside this private research repository.
+- Dataset license reported by its upstream card: CC BY 4.0. Retain attribution and verify the upstream card before redistribution outside this research repository.
 - Dataset files are copied without modification. Original paper PDFs and unrelated personal files are excluded.
 
 No project-wide license is asserted for upstream materials. API keys are excluded.
+
+Raw responses are gzip-compressed without content changes. Before resuming, decompress results/fig13_api_responses.jsonl.gz to results/fig13_api_responses.jsonl.
