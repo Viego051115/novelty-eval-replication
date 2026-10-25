@@ -1,9 +1,7 @@
 {
-  "config": "fig13_gpt-5.4_point",
-  "complete_items": 300,
-  "total_items": 308,
-  "start_balance": 27.94,
-  "current_balance": 26.28,
-  "spend": 1.6600000000000001,
-  "failures": []
+  "status": "complete",
+  "configurations": 8,
+  "start_balance": 17.19,
+  "end_balance": 15.71,
+  "spend": 1.4800000000000004
 }

@@ -1,0 +1,17 @@
+{
+  "status": "stopped_not_required",
+  "config": "fig11_human-only_point_P2_pw_noagg",
+  "complete_items": 170,
+  "total_items": 299,
+  "completed_configs": [
+    "fig11_human-only_pair_P1_noagg",
+    "fig11_human-only_pair_P2_noagg",
+    "fig11_human-only_pair_P3_noagg",
+    "fig11_human-only_pair_P4_noagg",
+    "fig11_human-only_pair_P5_noagg",
+    "fig11_human-only_pair_plan_noagg",
+    "fig11_human-only_point_P1_pw_noagg"
+  ],
+  "errors": [],
+  "reason": "Upstream README and derive_subrun_artifacts.py derive three k=1 subruns from existing k=3 calls; extra fresh calls are supplementary, not required."
+}

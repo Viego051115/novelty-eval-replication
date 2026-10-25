@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "completed_configs": [
+    "fig12_human-only_P3_plan",
+    "fig12_human-only_P4_plan",
+    "fig12_human-only_P5_plan"
+  ],
+  "total_configurations": 3
+}

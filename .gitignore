@@ -8,3 +8,10 @@ __pycache__/
 *.py[cod]
 .venv/
 *.tmp
+
+private_finance/
+*usage_data*.zip
+
+results/fig13_api_responses.jsonl
+
+results/fig13_api_responses.jsonl

@@ -1,27 +1,38 @@
-# Protocol review / 原文对照与待修正项
+# Protocol review and remaining work
 
-## What is aligned in the planned subset
+The 40 completed source configurations pass item-count, label, vote-count and aggregation checks. They are a selected single-DeepSeek study, not a complete reproduction of the multi-model paper.
 
-- Official datasets; two settings; pointwise 3 calls and pairwise 3 calls in each order.
-- Pairwise no-aggregation uses one call per order (2 total), not one total.
-- Max output tokens 8192; temperature not explicitly set in harness2 / continuation.
-- Reference, P1/P2 and pairwise P3/P4/P5; supplied plan-format inputs.
+## Aligned elements
 
-## What is not yet established / remaining work
+- Official English benchmark; two settings; 299/308 pointwise items and 154 pairs per setting.
+- Reference sampling: three pointwise votes, or three votes in each pairwise presentation order.
+- Reference, P1/P2, pairwise P3/P4/P5, supplied plan-format inputs, and released alternative-source data.
+- Human-Only plan P3/P4/P5 supplements completed on October 25.
+- Corpus-level paired BCa intervals: 100,000 resamples, shared item indices, no multiple-testing adjustment.
 
-1. Audit flags must be repaired before declaring all configurations complete. Missing/unparsed votes cannot be treated as genuine ties.
-2. Legacy parser accepts fallback digits and may use reasoning content when final content is empty. Recent continuation instead requires an explicit novelty field in final content. This parser change is a methodological difference between run generations.
-3. No independently verified byte-for-byte prompt comparison is claimed; PDF line-wrap and formatting extraction require careful comparison.
-4. Model alias `deepseek-chat` is not a pinned snapshot. Recent calls record returned model IDs; historical calls often do not. Cross-date version changes need checking before pooling.
-5. reasoning_effort=high is not sent. Support and equivalent settings for the actual model version must be verified; omission is not identical to the paper's high-effort condition.
-6. Paper Fig.4 also includes retrieval and low reasoning effort, neither implemented in this matrix. Fig.12 includes both settings; local runs currently cover Human+Generated only.
-7. Paper Fig.13 lists Sonnet 4.5 baseline plus Opus 4.5 / GPT-5.1 / GPT-5.4; local GPT-5 is an extra condition.
-8. Paired 100,000-resample BCa confidence intervals and significance marks remain to be computed and validated.
-9. Paper Fig.11 removes aggregation throughout the controlled matrix. The local noagg row alone does not reproduce that experiment.
-10. Agentic retrieval, dedicated evaluators, cost-quality comparisons and retrieval across generators are not completed.
+## No-aggregation correction
 
-Dataset review and signal-extraction stages used foreign LLMs upstream even for Human-Only text; only the original paper ideas themselves are human-authored. Reusing this benchmark isolates judge changes; it does not independently repeat upstream expert validation.
+The authors' README explicitly derives no-aggregation results from saved votes; fresh calls are not required. Their derive_subrun_artifacts.py selects each index k=0,1,2 to create three single-sample subruns. Pairwise subrun k uses one forward and one reverse vote; pointwise uses vote k. Metrics are computed per subrun and then averaged. Fig11 compares with the Fig4 reference, which still aggregates.
 
-## Evidence and conclusions
+derive_noagg_paper.py implements that procedure on the validated local votes: 22 derived conditions, of which 18 add distinct conditions beyond the source matrix. Thus 58 distinct conditions are covered. Source and derived counts are not added without deduplication.
 
-Read saved predictions by unique item index, require the expected vote count, and check label alignment. Avoid inferring a full configuration from file existence. Generator-side low-novelty labels are assumptions inherited from the benchmark; falling accuracy can reflect judge failure, weak-label problems, or both. Correlation with generated text is not proof of a style mechanism.
+Earlier first-vote diagnostics remain labelled as diagnostics. Seven complete fresh repeats and one partial repeat were additionally obtained before the upstream derivation was checked; they are archived as supplementary repeats, excluded from condition coverage. Further fresh calls were stopped. run_fig11_fresh.py now requires an explicit optional-repeat flag.
+
+Pinned upstream reference: [1db410dc0a57d94e51d57b3e52a03e4f9e0fb578](https://github.com/noy-sternlicht/novelty-eval/tree/1db410dc0a57d94e51d57b3e52a03e4f9e0fb578). This code inspection does not change the experiment's paper target, the user's v1 PDF.
+
+## Limits still requiring resolution
+
+1. Legacy parsers accept fallback digits and sometimes reasoning content when final content is empty. Recent continuation requires an explicit novelty field in final content. Historical answers cannot all be re-parsed because only some raw responses survived.
+2. deepseek-chat is an unpinned alias. Returned model names are recorded for recent calls, not all historical ones. No stable historical model snapshot is established.
+3. Historical calls omit explicit thinking effort. Current official low/high probes work, but current documentation cannot establish historical default behavior. Four matched explicit-high references are needed before interpreting four explicit-low conditions.
+4. No independently verified byte-for-byte prompt identity is claimed. The prompts were checked against the paper text; whitespace and formatting were transcribed.
+5. Fig4 still lacks four retrieval and four explicit-low conditions. Eight Fig11 extensions depend on those missing sources and can later be derived without additional judging calls.
+6. Cross-source retrieval, agentic retrieval and dedicated evaluators remain unfinished. The authors' retrieval workflow requires a cache built with contributions, five queries, Paper Finder, publication cutoff 2025-03-01 and self-paper exclusion. Generic search would be a changed retrieval protocol.
+7. Fig13 paper sources are the Sonnet baseline plus Opus 4.5, GPT-5.1 and GPT-5.4. GPT-5 is an additional condition, not a required paper source.
+8. Upstream data construction used foreign LLMs, including signal extraction and text normalization. These runs change the judge, not the entire data pipeline. Expert validation is inherited, not independently repeated.
+
+## Interpretation
+
+Strict accuracy counts ties as failures. Strict accuracy below 50% alone does not establish reversed preferences; inspect soft accuracy and ties. Weak generated-side labels are inherited assumptions. Falling accuracy can reflect judge errors, weak-label errors, or both. Source effects do not establish stylistic causation or self-preference.
+
+Private original invoices, per-key balances and financial ledgers stay local and are excluded from this public repository.

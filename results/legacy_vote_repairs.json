@@ -1,0 +1,20 @@
+[
+  {
+    "file": "deepseek_p4a_human-only_noagg.jsonl",
+    "i": 262,
+    "old_pred": null,
+    "new_pred": 0
+  },
+  {
+    "file": "deepseek_p4a_human-plus-generated_P1_pw.jsonl",
+    "i": 132,
+    "old_pred": 0,
+    "new_pred": 0
+  },
+  {
+    "file": "deepseek_p4b_human-plus-generated_P4.jsonl",
+    "i": 114,
+    "old_pred": 1,
+    "new_pred": null
+  }
+]

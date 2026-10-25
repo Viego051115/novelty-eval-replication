@@ -1,0 +1,20 @@
+{
+  "parts": [
+    "part-000.gzpart",
+    "part-001.gzpart",
+    "part-002.gzpart",
+    "part-003.gzpart",
+    "part-004.gzpart",
+    "part-005.gzpart",
+    "part-006.gzpart",
+    "part-007.gzpart",
+    "part-008.gzpart",
+    "part-009.gzpart",
+    "part-010.gzpart",
+    "part-011.gzpart",
+    "part-012.gzpart",
+    "part-013.gzpart"
+  ],
+  "gzip_sha256": "00a29fd47ca44fd538be6ea16e5924eab462feaa97ff3a256379e0441737cfd6",
+  "raw_sha256": "96f4f39e3d35b4199df3be450c0aad5fd23a4ec49604d88101d07537c0ccc893"
+}

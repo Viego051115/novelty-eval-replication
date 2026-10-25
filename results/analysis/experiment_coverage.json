@@ -1,0 +1,528 @@
+{
+  "scope": "One DeepSeek judge; configuration count only, excluding dataset reconstruction and expert audit. Fig8/9/10 are derived metrics. Extra GPT-5 source is not part of paper source comparison. Fig11 derives three k=1 subruns from each source as in upstream code; no fresh calls required.",
+  "completed": 58,
+  "actual_run_configurations": 40,
+  "derived_conditions": 22,
+  "total_including_two_extras": 86,
+  "paper_listed_target": 84,
+  "additional_calibration_runs_needed": 4,
+  "calibration_note": "Four explicit high-effort references are needed before interpreting four new low-effort conditions. Legacy default effort is unverified. Completion counts do not certify protocol fidelity.",
+  "configurations": [
+    {
+      "config": "p4b_human-only_ref",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-only_P1",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-only_P2",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-only_P3",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-only_P4",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-only_P5",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-only_retrieval",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4b_human-only_low",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4b_human-only_noagg",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "p4b_human-only_plan",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-only_ref_pw",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-only_P1_pw",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-only_P2_pw",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-only_retrieval",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4a_human-only_low",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4a_human-only_noagg",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "p4a_human-only_plan",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig11_human-only_pair_P1_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_pair_P2_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_pair_P3_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_pair_P4_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_pair_P5_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_pair_retrieval_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-only_pair_low_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-only_pair_plan_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_point_P1_pw_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_point_P2_pw_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-only_point_retrieval_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-only_point_low_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-only_point_plan_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig12_human-only_P3_plan",
+      "figure": "12",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig12_human-only_P4_plan",
+      "figure": "12",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig12_human-only_P5_plan",
+      "figure": "12",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "dedicated_human-only_idea_novelty_checker",
+      "figure": "6/7",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "dedicated_human-only_ai_scientist",
+      "figure": "6/7",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "strong_rag_human-only_point",
+      "figure": "5",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_ref",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_P1",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_P2",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_P3",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_P4",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_P5",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_retrieval",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_low",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4b_human-plus-generated_noagg",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "p4b_human-plus-generated_plan",
+      "figure": "4b",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-plus-generated_ref_pw",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-plus-generated_P1_pw",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-plus-generated_P2_pw",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "p4a_human-plus-generated_retrieval",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4a_human-plus-generated_low",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "p4a_human-plus-generated_noagg",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "p4a_human-plus-generated_plan",
+      "figure": "4a",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_P1_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_P2_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_P3_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_P4_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_P5_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_retrieval_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_low_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-plus-generated_pair_plan_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_point_P1_pw_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_point_P2_pw_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig11_human-plus-generated_point_retrieval_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-plus-generated_point_low_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig11_human-plus-generated_point_plan_noagg",
+      "figure": "11",
+      "paper_listed_source": true,
+      "status": "derived_from_validated_votes"
+    },
+    {
+      "config": "fig12_human-plus-generated_P3_plan",
+      "figure": "12",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig12_human-plus-generated_P4_plan",
+      "figure": "12",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig12_human-plus-generated_P5_plan",
+      "figure": "12",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "dedicated_human-plus-generated_idea_novelty_checker",
+      "figure": "6/7",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "dedicated_human-plus-generated_ai_scientist",
+      "figure": "6/7",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "strong_rag_human-plus-generated_point",
+      "figure": "5",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_opus-4-5_pair",
+      "figure": "13",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig14_opus-4-5_pair_retrieval",
+      "figure": "14",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_opus-4-5_point",
+      "figure": "13",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig14_opus-4-5_point_retrieval",
+      "figure": "14",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_gpt-5.1_pair",
+      "figure": "13",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig14_gpt-5.1_pair_retrieval",
+      "figure": "14",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_gpt-5.1_point",
+      "figure": "13",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig14_gpt-5.1_point_retrieval",
+      "figure": "14",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_gpt-5.4_pair",
+      "figure": "13",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig14_gpt-5.4_pair_retrieval",
+      "figure": "14",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_gpt-5.4_point",
+      "figure": "13",
+      "paper_listed_source": true,
+      "status": "validated"
+    },
+    {
+      "config": "fig14_gpt-5.4_point_retrieval",
+      "figure": "14",
+      "paper_listed_source": true,
+      "status": "not_yet_validated"
+    },
+    {
+      "config": "fig13_gpt-5_pair",
+      "figure": "extra",
+      "paper_listed_source": false,
+      "status": "validated"
+    },
+    {
+      "config": "fig13_gpt-5_point",
+      "figure": "extra",
+      "paper_listed_source": false,
+      "status": "validated"
+    }
+  ]
+}

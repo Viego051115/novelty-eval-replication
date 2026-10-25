@@ -3,6 +3,7 @@ import concurrent.futures as cf
 import datetime as dt
 import hashlib
 import json
+import os
 import pathlib
 import re
 import threading
@@ -21,7 +22,8 @@ RAW = ROOT / 'results' / 'fig13_api_responses.jsonl'
 STATE = ROOT / 'results' / 'fig13_resume_status.json'
 CACHE = {}
 START = None
-MAX_SPEND = 10.0
+MAX_SPEND = float(os.environ.get('NOVELTY_MAX_SPEND_CNY', '5.0'))
+CALL_OPTIONS = {}
 
 def dump(path, obj):
     tmp = path.with_suffix('.tmp')
@@ -44,21 +46,27 @@ def parse(content):
 def call(config, i, vote, prompt):
     key = f'{config}:{i}:{vote}'
     digest = hashlib.sha256(prompt.encode()).hexdigest()
+    if CALL_OPTIONS:
+        digest = hashlib.sha256(json.dumps({'prompt':prompt,'options':CALL_OPTIONS},sort_keys=True).encode()).hexdigest()
     if key in CACHE and CACHE[key].get('prompt_sha256') == digest:
         return CACHE[key]['verdict']
     cfg = h.PROVIDERS['deepseek']
     req = urllib.request.Request(cfg['base_url'],
-        data=json.dumps({'model':cfg['model'], 'messages':[{'role':'user','content':prompt}], 'max_tokens':8192}).encode(),
+        data=json.dumps({'model':cfg['model'], 'messages':[{'role':'user','content':prompt}], 'max_tokens':8192, **CALL_OPTIONS}).encode(),
         headers={'Authorization':'Bearer '+cfg['key'], 'Content-Type':'application/json'})
     for attempt in range(5):
         if STOP.is_set():
             raise RuntimeError('Budget or fatal-error stop')
         try:
+            started_at = dt.datetime.now(dt.timezone.utc).isoformat()
             with urllib.request.urlopen(req, timeout=180) as response:
                 data = json.load(response)
             choice = data['choices'][0]
             content = choice['message'].get('content') or ''
             record = {'key':key, 'utc':dt.datetime.now(dt.timezone.utc).isoformat(),
+                'request_started_at':started_at, 'request_finished_at':dt.datetime.now(dt.timezone.utc).isoformat(),
+                'api_key_alias':'nuozhou-3', 'api_key_suffix':cfg['key'][-4:],
+                'request_options':dict(CALL_OPTIONS),
                 'prompt_sha256':digest, 'model':data.get('model'), 'usage':data.get('usage'),
                 'finish_reason':choice.get('finish_reason'), 'content':content}
             try:
@@ -161,6 +169,34 @@ def main():
             summary.append({'config':config,**metric})
             dump(ROOT/'results'/'fig13_completed_summary.json',summary)
             print(json.dumps(summary[-1]),flush=True)
+    # Repair only the missing votes in legacy item records; retain all valid votes.
+    repairs=[]
+    for filename, item, prompt_key, datafile, kind in [
+        ('deepseek_p4a_human-only_noagg.jsonl',262,'ref_pw','human-only_pointwise.parquet','point'),
+        ('deepseek_p4a_human-plus-generated_P1_pw.jsonl',132,'P1_pw','human-plus-generated_pointwise.parquet','point'),
+        ('deepseek_p4b_human-plus-generated_P4.jsonl',114,'P4','human-plus-generated_pairwise.parquet','pair')]:
+        path=ROOT/'results'/filename
+        records=[json.loads(l) for l in path.read_text(encoding='utf-8').splitlines() if l.strip()]
+        record=next(r for r in reversed(records) if r['i']==item)
+        votes=list(record['votes'])
+        if all(v in (0,1) for v in votes):continue
+        row=pd.read_parquet(ROOT/'data'/datafile).iloc[item]
+        for k,v in enumerate(votes):
+            if v in (0,1):continue
+            if kind=='point':prompt=h.PROMPTS[prompt_key].format(idea=row['idea'])
+            else:
+                a,b=(row['idea_a'],row['idea_b']) if k<3 else (row['idea_b'],row['idea_a'])
+                prompt=h.PROMPTS[prompt_key].format(idea0=a,idea1=b)
+            votes[k]=call('repair_'+path.stem,item,k,prompt)
+        if kind=='point':pred=int(sum(votes)>len(votes)/2)
+        else:
+            wins=sum(v==0 for v in votes[:3])+sum(v==1 for v in votes[3:])
+            pred=0 if wins>3 else 1 if wins<3 else None
+        updated={**record,'votes':votes,'pred':pred,'failed':False,'repair_utc':dt.datetime.now(dt.timezone.utc).isoformat()}
+        with path.open('a',encoding='utf-8') as f:f.write(json.dumps(updated)+'\n')
+        repairs.append({'file':filename,'i':item,'old_pred':record['pred'],'new_pred':pred})
+        print('Repaired '+filename+' item '+str(item),flush=True)
+    dump(ROOT/'results'/'legacy_vote_repairs.json',repairs)
     final=balance()
     dump(STATE,{'status':'complete','configurations':8,'start_balance':START,'end_balance':final,'spend':START-final})
     print('COMPLETE '+json.dumps({'end_balance':final,'spend':START-final}),flush=True)

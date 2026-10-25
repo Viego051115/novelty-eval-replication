@@ -1,0 +1,287 @@
+{
+  "snapshot_utc": "2026-10-25T13:24:35.970660+00:00",
+  "target_configurations": 40,
+  "valid_configurations": 40,
+  "configurations": [
+    {
+      "config": "p4b_human-plus-generated_ref",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_P1",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_P2",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_P3",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_P4",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_P5",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_noagg",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-plus-generated_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-plus-generated_ref_pw",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-plus-generated_P1_pw",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-plus-generated_P2_pw",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-plus-generated_noagg",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-plus-generated_plan",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_ref",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_P1",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_P2",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_P3",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_P4",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_P5",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_noagg",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4b_human-only_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-only_ref_pw",
+      "saved_unique_items": 299,
+      "expected_items": 299,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-only_P1_pw",
+      "saved_unique_items": 299,
+      "expected_items": 299,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-only_P2_pw",
+      "saved_unique_items": 299,
+      "expected_items": 299,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-only_noagg",
+      "saved_unique_items": 299,
+      "expected_items": 299,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "p4a_human-only_plan",
+      "saved_unique_items": 299,
+      "expected_items": 299,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig12_human-plus-generated_P3_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig12_human-plus-generated_P4_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig12_human-plus-generated_P5_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig12_human-only_P3_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig12_human-only_P4_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig12_human-only_P5_plan",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_gpt-5_pair",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_gpt-5_point",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_gpt-5.1_pair",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_gpt-5.1_point",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_gpt-5.4_pair",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_gpt-5.4_point",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_opus-4-5_pair",
+      "saved_unique_items": 154,
+      "expected_items": 154,
+      "errors": [],
+      "complete_and_valid": true
+    },
+    {
+      "config": "fig13_opus-4-5_point",
+      "saved_unique_items": 308,
+      "expected_items": 308,
+      "errors": [],
+      "complete_and_valid": true
+    }
+  ]
+}

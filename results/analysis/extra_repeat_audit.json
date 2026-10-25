@@ -1,0 +1,71 @@
+{
+  "reason_stopped": "Author code derives k=1 results from saved k=3 responses; fresh repeats are optional. Recovered saved responses only; no new calls.",
+  "complete_configurations": 7,
+  "partial_configurations": 1,
+  "configurations": [
+    {
+      "config": "fig11_human-only_pair_P1_noagg",
+      "unique_items": 154,
+      "expected_items": 154,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_pair_P2_noagg",
+      "unique_items": 154,
+      "expected_items": 154,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_pair_P3_noagg",
+      "unique_items": 154,
+      "expected_items": 154,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_pair_P4_noagg",
+      "unique_items": 154,
+      "expected_items": 154,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_pair_P5_noagg",
+      "unique_items": 154,
+      "expected_items": 154,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_pair_plan_noagg",
+      "unique_items": 154,
+      "expected_items": 154,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_point_P1_pw_noagg",
+      "unique_items": 299,
+      "expected_items": 299,
+      "complete": true,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    },
+    {
+      "config": "fig11_human-only_point_P2_pw_noagg",
+      "unique_items": 170,
+      "expected_items": 299,
+      "complete": false,
+      "errors": [],
+      "role": "supplementary fresh repeat; not required by author derivation, not added to condition coverage"
+    }
+  ]
+}
