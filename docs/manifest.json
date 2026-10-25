@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-10-25T13:29:14.180760+00:00",
+  "snapshot_utc": "2026-10-25T19:03:46.548344+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -20,6 +20,11 @@
       "path": "build_coverage.py",
       "bytes": 2680,
       "sha256": "3e111327667c352eca4788ae5af4f3393a9f4307721f1cc4bae9d1e73d431f7f"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 524,
+      "sha256": "30d5dd261c5e8f906f97452c125087d5a8b204f2f89eaadab8817e6f9e57f770"
     },
     {
       "path": "create_progress_pdf.py",
@@ -117,6 +122,11 @@
       "sha256": "f6b3937470e9b5c4053059858d72e9184635333cafac79b58b3b2bda55b9258a"
     },
     {
+      "path": "docs/progress-update-2026-10-26.md",
+      "bytes": 2463,
+      "sha256": "93c6328445038dc426466a77f86ef18a52225acbcb74a1326c3ed407f86ff7f5"
+    },
+    {
       "path": "docs/protocol_review.md",
       "bytes": 4277,
       "sha256": "fbffe93b218e0ca431d0594dbd61b13797b1612384d4a2a8ae2a302d38d64de8"
@@ -124,7 +134,7 @@
     {
       "path": "docs/snapshot_audit.json",
       "bytes": 7283,
-      "sha256": "90ebd3c588d66c89a95d299f0208a8c56ce06cc3d54c0ebda0dc2c5a1c3f2dd4"
+      "sha256": "9e18142dc2993e7201123e4d2d58e18145ce3c9facd16dc5edb69b7ea759aafd"
     },
     {
       "path": "finish_fig13.py",
@@ -187,6 +197,11 @@
       "sha256": "8102689b11d387ab42a8cdd36fe5de6e7ef5f7757743a2636db04262b0c00e2d"
     },
     {
+      "path": "logs/updates/2026-10-26.json",
+      "bytes": 869,
+      "sha256": "db545249612c9ce3ef69e6621ecb1c82db1504d775b72c88c1f0696511315a2f"
+    },
+    {
       "path": "make_charts.py",
       "bytes": 4542,
       "sha256": "9e9ce129b17b4252782b449ba9c6c1bc5cee26bfc1bc99d4b166dd3d763e8adf"
@@ -198,8 +213,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6416,
-      "sha256": "97a689593545c18be4405f728796754fc7853fae05bcab2aa6943852afad633b"
+      "bytes": 5822,
+      "sha256": "661ed12fe8a3fb5f7b0ee7f9d29355d4b10dcdf76ecba75a6ffbe4ff25b6edb8"
     },
     {
       "path": "render_paper_figures.py",
@@ -294,7 +309,7 @@
     {
       "path": "results/configuration_audit.json",
       "bytes": 7283,
-      "sha256": "90ebd3c588d66c89a95d299f0208a8c56ce06cc3d54c0ebda0dc2c5a1c3f2dd4"
+      "sha256": "9e18142dc2993e7201123e4d2d58e18145ce3c9facd16dc5edb69b7ea759aafd"
     },
     {
       "path": "results/deepseek_fig11_human-only_pair_P1_noagg.jsonl",

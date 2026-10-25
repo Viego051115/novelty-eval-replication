@@ -1,0 +1,20 @@
+{
+  "client_date": "2026-10-26",
+  "recorded_utc": "2026-10-25T19:03:44.959666+00:00",
+  "kind": "documentation_and_integrity_checkpoint",
+  "comparison_commit": "31ef8643259460171c713eb5b49a7afc8cb1d794",
+  "new_paid_model_calls": 0,
+  "new_experiment_conditions_since_comparison": 0,
+  "source_configurations": 40,
+  "derived_noagg_conditions": 22,
+  "distinct_covered_conditions": 58,
+  "configuration_checklist_target": 86,
+  "remaining_conditions": 28,
+  "additional_high_effort_calibration_runs": 4,
+  "bca_comparisons": 120,
+  "raw_response_records": 11534,
+  "raw_response_sha256": "96f4f39e3d35b4199df3be450c0aad5fd23a4ec49604d88101d07537c0ccc893",
+  "source_unique_item_verdicts": 8271,
+  "source_valid_votes": 34379,
+  "financial_handling": "Local private_finance refreshed from existing evidence; no new invoice imported; not uploaded."
+}
