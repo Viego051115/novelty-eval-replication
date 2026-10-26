@@ -1,0 +1,101 @@
+{
+  "client_date": "2026-10-26",
+  "operation": "local_cleanup_and_english_pdf_update",
+  "archived_or_reorganized_files": 46,
+  "archived_legacy_scripts": 11,
+  "retained_root_scripts": 17,
+  "deleted_regenerable_files": [
+    {
+      "path": "__pycache__\\analyze_existing_results.cpython-313.pyc",
+      "bytes": 15526,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\build_cost_ledger.cpython-313.pyc",
+      "bytes": 21515,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\create_progress_pdf.cpython-313.pyc",
+      "bytes": 11541,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\finalize_snapshot.cpython-313.pyc",
+      "bytes": 12361,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\finish_fig13.cpython-313.pyc",
+      "bytes": 19127,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\harness.cpython-313.pyc",
+      "bytes": 13149,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\harness2.cpython-313.pyc",
+      "bytes": 11274,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\render_paper_figures.cpython-313.pyc",
+      "bytes": 9355,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\report_current_results.cpython-313.pyc",
+      "bytes": 12829,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\run_fig11_fresh.cpython-313.pyc",
+      "bytes": 10981,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "__pycache__\\run_matrix.cpython-313.pyc",
+      "bytes": 15075,
+      "reason": "regenerable Python bytecode"
+    },
+    {
+      "path": "output\\pdf\\preview-1.png",
+      "bytes": 152350,
+      "reason": "verified PDF preview; regenerable"
+    },
+    {
+      "path": "output\\pdf\\preview-2.png",
+      "bytes": 172003,
+      "reason": "verified PDF preview; regenerable"
+    },
+    {
+      "path": "tmp\\pdfs\\progress-preview-1.png",
+      "bytes": 215798,
+      "reason": "verified PDF preview; regenerable"
+    },
+    {
+      "path": "tmp\\pdfs\\progress-preview-2.png",
+      "bytes": 202879,
+      "reason": "verified PDF preview; regenerable"
+    }
+  ],
+  "deleted_bytes": 895763.0,
+  "report_pages": 2,
+  "report_sha256": "44fdf5406f1bcf6baa1b800418ae53c420b51f4fecaac2b2e66f642048d04096",
+  "raw_response_sha256": "96f4f39e3d35b4199df3be450c0aad5fd23a4ec49604d88101d07537c0ccc893",
+  "source_configurations": 40,
+  "covered_conditions": 58,
+  "new_model_calls": 0,
+  "previous_report_backups": [
+    {
+      "path": "reports\\DeepSeek_Progress_Brief_EN_previous.pdf",
+      "sha256": "f6b3937470e9b5c4053059858d72e9184635333cafac79b58b3b2bda55b9258a"
+    },
+    {
+      "path": "legacy_scripts\\create_progress_pdf_previous.py",
+      "sha256": "fba3f7dd0ab3f2bb88c508d9ce11662095574717deeb556329a29d59175e85fd"
+    }
+  ]
+}

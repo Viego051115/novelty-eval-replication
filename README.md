@@ -4,7 +4,7 @@
 
 ## Status / 当前状态
 
-- Verified snapshot UTC: `2026-10-25T19:03:46.548344+00:00`.
+- Verified snapshot UTC: `2026-10-26T05:10:52.466200+00:00`.
 - All **40/40 completed source configurations** pass unique-item count, label alignment, valid-vote count and aggregation checks. These include the original 37 and 3 Human-Only plan-prompt supplements. Optional fresh repeats are archived separately and excluded from this source count.
 - This is one DeepSeek judge on a selected experiment matrix; it is **not** a completed reproduction of all experiments in the paper.
 - Results: [all configuration metrics](results/all_configurations_summary.json); [integrity audit](results/configuration_audit.json).
@@ -12,6 +12,8 @@
 - Author-aligned no-aggregation derivation: `results/analysis/paper_noagg_derivation.json` contains 22 conditions using all three k=1 subruns and 52 additional BCa comparisons. These add 18 distinct conditions to the 40 actual-run conditions (58 covered conditions); four reference noagg rows overlap. Extra fresh repeats were stopped as unnecessary and are excluded from this coverage count.
 - Model versions, parser differences and other protocol limitations are documented below and in `docs/protocol_review.md`.
 - Private financial ledgers and original billing exports are excluded from this public repository.
+
+[English additions summary](docs/changes-since-earlier-report-en.md)
 
 ## Research question
 
@@ -76,3 +78,4 @@ No project-wide license is asserted for upstream materials. API keys are exclude
 Raw response parts reconstruct the original journal without content changes.
 
 The gzip response archive is split into small lossless parts for reliable upload. Run `python restore_response_log.py` before resuming to restore and SHA-256-verify the original response log. No API requests are made by that restore script.
+

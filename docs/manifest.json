@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-10-25T19:03:46.548344+00:00",
+  "snapshot_utc": "2026-10-26T05:10:52.466200+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -23,13 +23,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 524,
-      "sha256": "30d5dd261c5e8f906f97452c125087d5a8b204f2f89eaadab8817e6f9e57f770"
+      "bytes": 1222,
+      "sha256": "e52b12286dbae6140863021820ca4a5d4f9a10c5b61412176fcb5943e38bc239"
     },
     {
       "path": "create_progress_pdf.py",
-      "bytes": 7423,
-      "sha256": "fba3f7dd0ab3f2bb88c508d9ce11662095574717deeb556329a29d59175e85fd"
+      "bytes": 8224,
+      "sha256": "1a4b0a3c55ca0ee0e85b09c1b3e1bc78c12dcae3a8da2da264b09e53ba7583e3"
     },
     {
       "path": "data/human-only_pairwise.parquet",
@@ -117,14 +117,19 @@
       "sha256": "5f4b9e633bee4d72be0e044fe7ef8d8aa49b69496e0600294a6ade1d4f47086e"
     },
     {
+      "path": "docs/changes-since-earlier-report-en.md",
+      "bytes": 833,
+      "sha256": "f9484a2d2d8218ea8fe52f39f432857b57869dff5c9c3df87ece29ed05e1ced5"
+    },
+    {
       "path": "docs/DeepSeek_Progress_Brief_EN.pdf",
-      "bytes": 208267,
-      "sha256": "f6b3937470e9b5c4053059858d72e9184635333cafac79b58b3b2bda55b9258a"
+      "bytes": 208519,
+      "sha256": "44fdf5406f1bcf6baa1b800418ae53c420b51f4fecaac2b2e66f642048d04096"
     },
     {
       "path": "docs/progress-update-2026-10-26.md",
-      "bytes": 2463,
-      "sha256": "93c6328445038dc426466a77f86ef18a52225acbcb74a1326c3ed407f86ff7f5"
+      "bytes": 2743,
+      "sha256": "353fd0318a22a5aaae5bb90cd4d7d3d6ff5917758124c7e54d2e8e0f362117f1"
     },
     {
       "path": "docs/protocol_review.md",
@@ -134,7 +139,7 @@
     {
       "path": "docs/snapshot_audit.json",
       "bytes": 7283,
-      "sha256": "9e18142dc2993e7201123e4d2d58e18145ce3c9facd16dc5edb69b7ea759aafd"
+      "sha256": "5dee0aad823d660f5250f3574eada595b6bb1c9bdcbf28a3d76302b74e45b6f0"
     },
     {
       "path": "finish_fig13.py",
@@ -197,6 +202,11 @@
       "sha256": "8102689b11d387ab42a8cdd36fe5de6e7ef5f7757743a2636db04262b0c00e2d"
     },
     {
+      "path": "logs/updates/2026-10-26-cleanup-report.json",
+      "bytes": 3121,
+      "sha256": "6a00d4f4ce469a4e4eebc4955c69f6f31093e98f276ead5bc539c234757703c1"
+    },
+    {
       "path": "logs/updates/2026-10-26.json",
       "bytes": 869,
       "sha256": "db545249612c9ce3ef69e6621ecb1c82db1504d775b72c88c1f0696511315a2f"
@@ -213,8 +223,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5822,
-      "sha256": "661ed12fe8a3fb5f7b0ee7f9d29355d4b10dcdf76ecba75a6ffbe4ff25b6edb8"
+      "bytes": 5894,
+      "sha256": "220e133cb656c02427d24a32b24763e980c31195a0269c5c6e084259382c01e2"
     },
     {
       "path": "render_paper_figures.py",
@@ -309,7 +319,7 @@
     {
       "path": "results/configuration_audit.json",
       "bytes": 7283,
-      "sha256": "9e18142dc2993e7201123e4d2d58e18145ce3c9facd16dc5edb69b7ea759aafd"
+      "sha256": "5dee0aad823d660f5250f3574eada595b6bb1c9bdcbf28a3d76302b74e45b6f0"
     },
     {
       "path": "results/deepseek_fig11_human-only_pair_P1_noagg.jsonl",
