@@ -1,0 +1,128 @@
+{
+  "client_date": "2026-10-26",
+  "kind": "directory_reorganization",
+  "moved_programs": 17,
+  "categories": [
+    "core",
+    "experiments",
+    "analysis",
+    "reporting",
+    "maintenance",
+    "finance",
+    "diagnostics"
+  ],
+  "entry_point": "project.py",
+  "protected_files_verified": 68,
+  "new_model_calls": 0,
+  "scientific_result_changes": false,
+  "pdf_content_changed": false,
+  "private_programs_excluded_from_public": [
+    "finance",
+    "diagnostics",
+    "publishing helpers"
+  ],
+  "program_moves": [
+    {
+      "source": "harness2.py",
+      "destination": "programs\\core\\harness2.py",
+      "old_sha256": "b4fb969fca0efb8a1a7fac90c0ef15f67a8d195fd36a9c0e205f507f198f24b7",
+      "new_sha256": "2f030a0d8819e4bea0d7f634ec86147f5bb578b63881a6a3aacf1fe49ec4163a"
+    },
+    {
+      "source": "finish_fig13.py",
+      "destination": "programs\\experiments\\finish_fig13.py",
+      "old_sha256": "3028ab0d69b92727982c75d6f7efecd46147ff749d3984eac6d41b9ab1ba3672",
+      "new_sha256": "3b5ff83aaa8aa11a400136193a3d49e9435583d706673d40e993a7ea1770b98d"
+    },
+    {
+      "source": "run_deepseek_extensions.py",
+      "destination": "programs\\experiments\\run_deepseek_extensions.py",
+      "old_sha256": "3753a29e75e2bab452a209d59a3310435544be0a830ba43cf4b9b845d930c7b7",
+      "new_sha256": "8cc90b8f91ba05cecee202016f1aca570d5a9d354286ebf7d4829f03e300dc62"
+    },
+    {
+      "source": "run_fig11_fresh.py",
+      "destination": "programs\\experiments\\run_fig11_fresh.py",
+      "old_sha256": "5d33fc7a51915731109367ba5f948a0385f7bec1ed286b132688da1161294e7d",
+      "new_sha256": "495608be1b10b5d2f01b69252a02859b1f1676d56280ace4a12c5b4811e17edd"
+    },
+    {
+      "source": "run_matrix.py",
+      "destination": "programs\\experiments\\run_matrix.py",
+      "old_sha256": "166666df39681e788fd2b6777aebed8fae90e66fbe40d49f9d78efb8a4fcda5f",
+      "new_sha256": "07e6e01d334d390f5afe5804e57209e53fe37bd34dbdf158ce4099e7e80055a3"
+    },
+    {
+      "source": "analyze_existing_results.py",
+      "destination": "programs\\analysis\\analyze_existing_results.py",
+      "old_sha256": "833dfcf1c4923bfaab6f23d9a67c95efa42a8e903ec68b2d134523a672fff91e",
+      "new_sha256": "963a78fe2537c5cb87cc447db9b59f2df36cf18adad6e8bea2f46ee9208c8438"
+    },
+    {
+      "source": "derive_noagg_paper.py",
+      "destination": "programs\\analysis\\derive_noagg_paper.py",
+      "old_sha256": "5f4b9e633bee4d72be0e044fe7ef8d8aa49b69496e0600294a6ade1d4f47086e",
+      "new_sha256": "984d26de441a2079600ef0a77cef77eeb1fd5cbf3ee70752390e5ce38c7fb4ec"
+    },
+    {
+      "source": "build_coverage.py",
+      "destination": "programs\\analysis\\build_coverage.py",
+      "old_sha256": "3e111327667c352eca4788ae5af4f3393a9f4307721f1cc4bae9d1e73d431f7f",
+      "new_sha256": "6bf265017fc3357d50f75d97efd888bb88349803c2bbff212dbd895b685b9dc7"
+    },
+    {
+      "source": "report_current_results.py",
+      "destination": "programs\\reporting\\report_current_results.py",
+      "old_sha256": "ddb494b3e8d26f93d6d99b3ae50bbd57d123ea49de76e5f1fc78a9017973bb55",
+      "new_sha256": "12f652ea46fdd8cecf7079e056ac210fb121cbe7964993781476f3556e182ff9"
+    },
+    {
+      "source": "render_paper_figures.py",
+      "destination": "programs\\reporting\\render_paper_figures.py",
+      "old_sha256": "3cd791e78b559f3f945d20e815d676bdbfa890f0cd3e6cab095c2446d3cc1a41",
+      "new_sha256": "4c7c24a4f9061a1e8ee2abe915566267f5660791445b10ffe1972f836c208537"
+    },
+    {
+      "source": "create_progress_pdf.py",
+      "destination": "programs\\reporting\\create_progress_pdf.py",
+      "old_sha256": "4f9e438aa79f76cb4c266354c6de93db231340cc03b1399d7f68a11f3266d90f",
+      "new_sha256": "4b377bf5b18f21d9a72552d37b1e3f512185b2ad31bfcdf6295c77c514d310d2"
+    },
+    {
+      "source": "audit_extra_repeats.py",
+      "destination": "programs\\maintenance\\audit_extra_repeats.py",
+      "old_sha256": "06ebad12dcded07814da257b16ed901fe2fd2b70d577b7c116e22624bb6a10f8",
+      "new_sha256": "224595ea7f27bc0985ad0691b30c97438ee20118ed13b00786e7eeb09662e7a5"
+    },
+    {
+      "source": "finalize_snapshot.py",
+      "destination": "programs\\maintenance\\finalize_snapshot.py",
+      "old_sha256": "a3ae5e24f3d5d185baa7a6d339eced145eace25139c56a6d72acecdce3f8bc98",
+      "new_sha256": "93c8d63aa80d632cd6f3f49baa769d6d58758baa7c488ded2177d4837f436db3"
+    },
+    {
+      "source": "split_public_responses.py",
+      "destination": "programs\\maintenance\\split_public_responses.py",
+      "old_sha256": "d97e37f42cabb0eea2ca263895499deaafafd8b93db0324e7aea0f9d3bcc2dc8",
+      "new_sha256": "f9bfcf8078aac13477a9528e87739e449afbcd45deeaaa15ac852351322138ef"
+    },
+    {
+      "source": "publish_api_snapshot.py",
+      "destination": "programs\\maintenance\\publish_api_snapshot.py",
+      "old_sha256": "1e18418e7e27de42775e6e97ea3c4d1799d2683ee1838879722899db92b45516",
+      "new_sha256": "81e7748bc93ce8692b8275d460fb97efc9ed8bae33657b8203397abe7e3cca04"
+    },
+    {
+      "source": "build_cost_ledger.py",
+      "destination": "programs\\finance\\build_cost_ledger.py",
+      "old_sha256": "14b89567f04d38d8aa08f488123aa9d2954365b12d947bf75e68488688a2b2bc",
+      "new_sha256": "85af66106d6cad2406c214f2aaffb13b2ac2bee6dd88f9732a8e2728273fe40c"
+    },
+    {
+      "source": "probe_deepseek_options.py",
+      "destination": "programs\\diagnostics\\probe_deepseek_options.py",
+      "old_sha256": "0592478feac7992d029d60432c28414346baab17095fa467cbcbe6d5cee7aa6a",
+      "new_sha256": "f16d8151f0d93c9777ebc1716a3f8039f93e0216a2faa29400ddd8e6c1970b61"
+    }
+  ]
+}

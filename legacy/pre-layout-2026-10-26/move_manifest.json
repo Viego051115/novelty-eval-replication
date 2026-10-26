@@ -1,0 +1,82 @@
+[
+  {
+    "from": "analyze_existing_results.py",
+    "to": "legacy/pre-layout-2026-10-26/analyze_existing_results.py",
+    "sha256": "833dfcf1c4923bfaab6f23d9a67c95efa42a8e903ec68b2d134523a672fff91e"
+  },
+  {
+    "from": "build_coverage.py",
+    "to": "legacy/pre-layout-2026-10-26/build_coverage.py",
+    "sha256": "3e111327667c352eca4788ae5af4f3393a9f4307721f1cc4bae9d1e73d431f7f"
+  },
+  {
+    "from": "create_progress_pdf.py",
+    "to": "legacy/pre-layout-2026-10-26/create_progress_pdf.py",
+    "sha256": "4f9e438aa79f76cb4c266354c6de93db231340cc03b1399d7f68a11f3266d90f"
+  },
+  {
+    "from": "derive_noagg_paper.py",
+    "to": "legacy/pre-layout-2026-10-26/derive_noagg_paper.py",
+    "sha256": "5f4b9e633bee4d72be0e044fe7ef8d8aa49b69496e0600294a6ade1d4f47086e"
+  },
+  {
+    "from": "finish_fig13.py",
+    "to": "legacy/pre-layout-2026-10-26/finish_fig13.py",
+    "sha256": "3028ab0d69b92727982c75d6f7efecd46147ff749d3984eac6d41b9ab1ba3672"
+  },
+  {
+    "from": "harness.py",
+    "to": "legacy/pre-layout-2026-10-26/harness.py",
+    "sha256": "b35f5493ea787c6727d2ab11953bdc1f1a8fae9ff05cca330f361ccbd2034275"
+  },
+  {
+    "from": "harness2.py",
+    "to": "legacy/pre-layout-2026-10-26/harness2.py",
+    "sha256": "b4fb969fca0efb8a1a7fac90c0ef15f67a8d195fd36a9c0e205f507f198f24b7"
+  },
+  {
+    "from": "make_charts.py",
+    "to": "legacy/pre-layout-2026-10-26/make_charts.py",
+    "sha256": "9e9ce129b17b4252782b449ba9c6c1bc5cee26bfc1bc99d4b166dd3d763e8adf"
+  },
+  {
+    "from": "make_report_charts.py",
+    "to": "legacy/pre-layout-2026-10-26/make_report_charts.py",
+    "sha256": "b9d422d443a36465760f8a2afbd9f5851991fff99b4f2466a76bff97a2993336"
+  },
+  {
+    "from": "render_paper_figures.py",
+    "to": "legacy/pre-layout-2026-10-26/render_paper_figures.py",
+    "sha256": "3cd791e78b559f3f945d20e815d676bdbfa890f0cd3e6cab095c2446d3cc1a41"
+  },
+  {
+    "from": "report_current_results.py",
+    "to": "legacy/pre-layout-2026-10-26/report_current_results.py",
+    "sha256": "ddb494b3e8d26f93d6d99b3ae50bbd57d123ea49de76e5f1fc78a9017973bb55"
+  },
+  {
+    "from": "run_baseline.py",
+    "to": "legacy/pre-layout-2026-10-26/run_baseline.py",
+    "sha256": "48e1bfae016729f395acb3d7885d1f889da610c459cce2facaf1106ba24ab2d9"
+  },
+  {
+    "from": "run_deepseek_extensions.py",
+    "to": "legacy/pre-layout-2026-10-26/run_deepseek_extensions.py",
+    "sha256": "3753a29e75e2bab452a209d59a3310435544be0a830ba43cf4b9b845d930c7b7"
+  },
+  {
+    "from": "run_demo.py",
+    "to": "legacy/pre-layout-2026-10-26/run_demo.py",
+    "sha256": "f1e851a1d79833509dbcc32ec91a57c56c9176b31af5f724bdb7a5e426bf1650"
+  },
+  {
+    "from": "run_fig11_fresh.py",
+    "to": "legacy/pre-layout-2026-10-26/run_fig11_fresh.py",
+    "sha256": "5d33fc7a51915731109367ba5f948a0385f7bec1ed286b132688da1161294e7d"
+  },
+  {
+    "from": "run_matrix.py",
+    "to": "legacy/pre-layout-2026-10-26/run_matrix.py",
+    "sha256": "131041cbd43784f51a01c1f56327cc5a0b65ad8ae68512ec1601f874ef3f2cfc"
+  }
+]

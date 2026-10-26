@@ -1,5 +1,13 @@
 # Change log
 
+## 2026-10-26 - program categories and unified entry
+
+- Grouped current programs by experiments, analysis, reporting, maintenance and shared core code.
+- Added `project.py` as the single command entry, with explicit paid-API labels and a dry-run option.
+- Preserved old root programs under `legacy/pre-layout-2026-10-26/`.
+- Kept input, prediction, response and PDF paths stable; no scientific results or model usage changed.
+- Added a directory guide. Finance, diagnostics and publishing helpers remain local-only.
+
 ## 2026-10-26 - singular first-person wording
 
 - Revised the current English PDF, its generator and the additions summary to use I rather than we.

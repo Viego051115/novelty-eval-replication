@@ -4,7 +4,7 @@
 
 ## Status / 当前状态
 
-- Verified snapshot UTC: `2026-10-26T05:10:52.466200+00:00`.
+- Verified snapshot UTC: `2026-10-26T06:06:36.927585+00:00`.
 - All **40/40 completed source configurations** pass unique-item count, label alignment, valid-vote count and aggregation checks. These include the original 37 and 3 Human-Only plan-prompt supplements. Optional fresh repeats are archived separately and excluded from this source count.
 - This is one DeepSeek judge on a selected experiment matrix; it is **not** a completed reproduction of all experiments in the paper.
 - Results: [all configuration metrics](results/all_configurations_summary.json); [integrity audit](results/configuration_audit.json).
@@ -13,20 +13,21 @@
 - Model versions, parser differences and other protocol limitations are documented below and in `docs/protocol_review.md`.
 - Private financial ledgers and original billing exports are excluded from this public repository.
 
-[English additions summary](docs/changes-since-earlier-report-en.md)
-
 ## Research question
 
 Does novelty judging remain sensitive to prompt wording and input distribution when the judge is a Chinese LLM?
 
 ## Layout
 
+Programs are grouped under `programs/`. Use `python project.py --help` as the entry point. See [directory guide](docs/project-layout.md). Finance and publication helpers are available only in the full local workspace; this public snapshot contains experiment and analysis code.
+
+
 | Path | Contents |
 |---|---|
 | `data/` | Original benchmark Parquet files, with attribution below |
-| `harness2.py` | Legacy prompt templates and majority / order-balanced judging |
-| `run_matrix.py` | Legacy driver for the agreed 37-configuration matrix |
-| `finish_fig13.py` | Item/vote-level checkpointed generator-source continuation |
+| `programs/core/harness2.py` | Legacy prompt templates and majority / order-balanced judging |
+| `programs/experiments/run_matrix.py` | Legacy driver for the agreed 37-configuration matrix |
+| `programs/experiments/finish_fig13.py` | Item/vote-level checkpointed generator-source continuation |
 | `results/deepseek_*.jsonl` | Item indices, labels, predictions and votes |
 | `results/raw_response_parts/` | Recent final response texts, timestamps, model IDs and token usage |
 | `logs/legacy/` | Historical logs; may include interrupted or failed runs |
@@ -38,24 +39,20 @@ Does novelty judging remain sensitive to prompt wording and input distribution w
 python -m pip install -r requirements.txt
 Copy-Item .env.example .env
 # Fill API keys locally. Never commit .env.
-python -u finish_fig13.py
+python project.py status
 ```
 
-`finish_fig13.py` calls paid DeepSeek APIs, resumes valid saved votes/items, checks balance, uses four workers and a per-invocation CNY 5 default stopping threshold (adjustable via NOVELTY_MAX_SPEND_CNY) plus a CNY 2 reserve. **Restarting resets the per-invocation budget.** Balance reporting can lag and in-flight calls can overshoot the threshold. It operates on the four pre-generated sources in the local data (GPT-5 is an extension beyond the paper's listed generator comparison).
+`programs/experiments/finish_fig13.py` calls paid DeepSeek APIs, resumes valid saved votes/items, checks balance, uses four workers and a per-invocation CNY 5 default stopping threshold (adjustable via NOVELTY_MAX_SPEND_CNY) plus a CNY 2 reserve. **Restarting resets the per-invocation budget.** Balance reporting can lag and in-flight calls can overshoot the threshold. It operates on the four pre-generated sources in the local data (GPT-5 is an extension beyond the paper's listed generator comparison).
 
-The other drivers are archived implementations, not recommended for blind reruns: `run_matrix.py` can discard an incomplete configuration and repeat paid calls. Read the audit first.
+The other drivers are archived implementations, not recommended for blind reruns: `programs/experiments/run_matrix.py` can discard an incomplete configuration and repeat paid calls. Read the audit first.
 
 ## Local analysis without API charges
 
 With saved result files present, these commands use local computation only:
 
 ```powershell
-python analyze_existing_results.py
-python derive_noagg_paper.py
-python build_coverage.py
-python report_current_results.py
-python render_paper_figures.py
-python create_progress_pdf.py
+python project.py statistics
+python project.py refresh-results
 ```
 
 The author-aligned no-aggregation calculation uses all three vote indices as three subruns, then averages their metrics. Fresh repeats are optional and were stopped after this upstream rule was verified. See [protocol review](docs/protocol_review.md), [coverage checklist](results/analysis/experiment_coverage.json) and [two-page English report](docs/DeepSeek_Progress_Brief_EN.pdf).
@@ -78,4 +75,3 @@ No project-wide license is asserted for upstream materials. API keys are exclude
 Raw response parts reconstruct the original journal without content changes.
 
 The gzip response archive is split into small lossless parts for reliable upload. Run `python restore_response_log.py` before resuming to restore and SHA-256-verify the original response log. No API requests are made by that restore script.
-
