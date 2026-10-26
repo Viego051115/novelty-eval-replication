@@ -1,6 +1,6 @@
 """Brief English research report generated only from audited metrics."""
 from pathlib import Path
-import json
+import json,re
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
@@ -33,10 +33,10 @@ def table(rows,widths):
 
 story=[Paragraph('DeepSeek Novelty Judging',styles['TitleX']),P('<b>Updated progress report and new results</b>'),
 H('Research purpose and design'),
-P('Test whether the sensitivity of LLM novelty judgments extends to a Chinese-model judge. We retain the authors\' English benchmark and change the judge to DeepSeek. The data include Human-Only and Human+Generated settings; this is not a wholly Chinese-model data-generation pipeline.'),
+P('Test whether the sensitivity of LLM novelty judgments extends to a Chinese-model judge. I retain the authors\' English benchmark and change the judge to DeepSeek. The data include Human-Only and Human+Generated settings; this is not a wholly Chinese-model data-generation pipeline.'),
 P('Pointwise evaluation asks whether one idea is novel (299 / 308 items); pairwise evaluation chooses between two ideas (154 pairs per setting). The legacy reference uses three pointwise votes or three votes per presentation order for pairwise evaluation. Prompt wording, aggregation, input format and pre-generated negative sources are varied.'),
 H('Additions since the earlier 37-configuration stage'),
-P('We completed three Human-Only plan-format conditions (P3, P4 and P5), bringing the source matrix to 40 configurations. Following the authors\' code, we derived 22 no-aggregation conditions from the saved votes; 18 add distinct conditions after deduplication. We also completed the associated statistics and figures. This document refresh itself adds no new model calls or experimental conditions.'),
+P('I completed three Human-Only plan-format conditions (P3, P4 and P5), bringing the source matrix to 40 configurations. Following the authors\' code, I derived 22 no-aggregation conditions from the saved votes; 18 add distinct conditions after deduplication. I also completed the associated statistics and figures. This document refresh itself adds no new model calls or experimental conditions.'),
 H('Verified results'),P(f'<b>{count} completed configurations</b> pass item-index, label, vote-count and aggregation checks. The original 37 configurations and three Human-Only plan-prompt supplements are complete. '+('The authors\' three-subrun procedure yields 22 no-aggregation conditions, covering 18 additional conditions after deduplication (58 conditions in total).' if D else 'No-aggregation results are being derived from existing votes.')),
 table([['Setting','Pointwise macro-F1','Pairwise strict','Pairwise soft','Tie rate']]+[[label,f"{M[f'p4a_{s}_ref_pw']['macro_f1']:.3f}",f"{M[f'p4b_{s}_ref']['strict']:.3f}",f"{M[f'p4b_{s}_ref']['soft']:.3f}",f"{100*M[f'p4b_{s}_ref']['tie_rate']:.1f}%"] for s,label in [('human-only','Human-Only'),('human-plus-generated','Human+Generated')]], [43*mm,37*mm,31*mm,31*mm,26*mm]),
 Spacer(1,5*mm),Image(str(AN/'configuration_changes.png'),width=168*mm,height=68.7*mm),
@@ -64,4 +64,5 @@ SimpleDocTemplate(str(path),pagesize=(210*mm,297*mm),rightMargin=21*mm,leftMargi
 reader=PdfReader(path);assert len(reader.pages)==2, len(reader.pages)
 text='\n'.join(p.extract_text() for p in reader.pages)
 assert str(count)+' completed configurations' in text and '24.68' in text and 'Newly completed Human-Only plan results' in text
+assert not re.search(r'\b(?:we|our|ours|ourselves|us)\b',text,re.I), 'Report must use singular first-person wording'
 print(path,'2 pages, extracted text verified')

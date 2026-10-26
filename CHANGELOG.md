@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-10-26 - singular first-person wording
+
+- Revised the current English PDF, its generator and the additions summary to use I rather than we.
+- Added a PDF text check to prevent plural first-person wording in future generated reports.
+- No changes to experimental results or API consumption.
+
 ## 2026-10-26 - English report and workspace cleanup
 
 - Updated the two-page English PDF with an explicit additions section and the completed Human-Only plan-prompt comparison table.

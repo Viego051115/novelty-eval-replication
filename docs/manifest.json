@@ -23,13 +23,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1222,
-      "sha256": "e52b12286dbae6140863021820ca4a5d4f9a10c5b61412176fcb5943e38bc239"
+      "bytes": 1526,
+      "sha256": "2c7d38e486745c038b74c63e62fd87e3c75e5d44b812017728ca38992dc45bc0"
     },
     {
       "path": "create_progress_pdf.py",
-      "bytes": 8224,
-      "sha256": "1a4b0a3c55ca0ee0e85b09c1b3e1bc78c12dcae3a8da2da264b09e53ba7583e3"
+      "bytes": 8340,
+      "sha256": "4f9e438aa79f76cb4c266354c6de93db231340cc03b1399d7f68a11f3266d90f"
     },
     {
       "path": "data/human-only_pairwise.parquet",
@@ -118,13 +118,13 @@
     },
     {
       "path": "docs/changes-since-earlier-report-en.md",
-      "bytes": 833,
-      "sha256": "f9484a2d2d8218ea8fe52f39f432857b57869dff5c9c3df87ece29ed05e1ced5"
+      "bytes": 830,
+      "sha256": "11713b637e2fb47b3ae3a109d2f156f4e8778d666e5181692d2736b758550c43"
     },
     {
       "path": "docs/DeepSeek_Progress_Brief_EN.pdf",
-      "bytes": 208519,
-      "sha256": "44fdf5406f1bcf6baa1b800418ae53c420b51f4fecaac2b2e66f642048d04096"
+      "bytes": 208516,
+      "sha256": "01c0b0e22e163ee5d08f46cb0d00de573f86bba6f1e5ed5b6d23dc4ddfc7199a"
     },
     {
       "path": "docs/progress-update-2026-10-26.md",
@@ -205,6 +205,11 @@
       "path": "logs/updates/2026-10-26-cleanup-report.json",
       "bytes": 3121,
       "sha256": "6a00d4f4ce469a4e4eebc4955c69f6f31093e98f276ead5bc539c234757703c1"
+    },
+    {
+      "path": "logs/updates/2026-10-26-report-style.json",
+      "bytes": 316,
+      "sha256": "e223d124fbbf57a1654a1a3babab2dffa1cd5e05542de5fae934e110ae795bd3"
     },
     {
       "path": "logs/updates/2026-10-26.json",
