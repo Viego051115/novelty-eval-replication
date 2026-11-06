@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-11-06T10:07:50.883668+00:00",
+  "provider": "deepseek",
+  "model": "deepseek-flash",
+  "options": {
+    "thinking": {
+      "type": "enabled"
+    }
+  },
+  "max_tokens": 8192,
+  "temperature": "omitted; provider default",
+  "conditions": [
+    {
+      "id": "effort_high_p4b_human-only_ref",
+      "setting": "human-only",
+      "protocol": "pairwise",
+      "variant": "ref",
+      "prompt": "ref",
+      "effort": "high"
+    },
+    {
+      "id": "effort_high_p4b_human-plus-generated_ref",
+      "setting": "human-plus-generated",
+      "protocol": "pairwise",
+      "variant": "ref",
+      "prompt": "ref",
+      "effort": "high"
+    },
+    {
+      "id": "effort_low_p4b_human-only_ref",
+      "setting": "human-only",
+      "protocol": "pairwise",
+      "variant": "ref",
+      "prompt": "ref",
+      "effort": "low"
+    },
+    {
+      "id": "effort_low_p4b_human-plus-generated_ref",
+      "setting": "human-plus-generated",
+      "protocol": "pairwise",
+      "variant": "ref",
+      "prompt": "ref",
+      "effort": "low"
+    },
+    {
+      "id": "effort_high_p4a_human-only_ref_pw",
+      "setting": "human-only",
+      "protocol": "pointwise",
+      "variant": "ref_pw",
+      "prompt": "ref_pw",
+      "effort": "high"
+    },
+    {
+      "id": "effort_high_p4a_human-plus-generated_ref_pw",
+      "setting": "human-plus-generated",
+      "protocol": "pointwise",
+      "variant": "ref_pw",
+      "prompt": "ref_pw",
+      "effort": "high"
+    },
+    {
+      "id": "effort_low_p4a_human-only_ref_pw",
+      "setting": "human-only",
+      "protocol": "pointwise",
+      "variant": "ref_pw",
+      "prompt": "ref_pw",
+      "effort": "low"
+    },
+    {
+      "id": "effort_low_p4a_human-plus-generated_ref_pw",
+      "setting": "human-plus-generated",
+      "protocol": "pointwise",
+      "variant": "ref_pw",
+      "prompt": "ref_pw",
+      "effort": "low"
+    }
+  ],
+  "scope": "Four explicit-high calibration references and four matched low-effort conditions",
+  "limitations": [
+    "Historical DeepSeek references use an unverified default. Compare each new low condition with its explicit-high counterpart.",
+    "Existing Human+Generated data retain original foreign-generator provenance; domestic judge extension only."
+  ],
+  "sources": [
+    "https://help.aliyun.com/zh/model-studio/get-api-key/",
+    "https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash"
+  ]
+}

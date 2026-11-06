@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-06",
+  "deepseek_existing_validated_source_conditions": 40,
+  "new_batch": {
+    "target_conditions": 8,
+    "scope": "4 explicit-high references + 4 matched low-effort configurations",
+    "status": "running",
+    "starting_balance_cny": 30.61,
+    "reserve_cny": 2.5
+  },
+  "remaining_blocker": "Original retrieval source and fixed-commit paths returned HTTP 404. Existing parquet does not include retrieved literature. Retrieval, strong RAG and dedicated evaluators are not complete.",
+  "finance": "Private per-call usage and balance journal: private_finance/domestic_api_usage.jsonl. Actual charges need official bills."
+}
