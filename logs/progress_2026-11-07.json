@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-07",
+  "source_conditions": 40,
+  "source_items": 8271,
+  "source_votes": 34379,
+  "derived_conditions": 22,
+  "new_effort": {
+    "valid_votes": 277,
+    "complete_items": 46,
+    "first_condition_target": 154,
+    "complete_conditions": 0,
+    "target_conditions": 8,
+    "last_status": "connection retries exhausted; resumed from checkpoint"
+  },
+  "glm": {
+    "valid_votes": 14,
+    "complete_items": 2,
+    "complete_conditions": 0,
+    "target_conditions": 20
+  },
+  "qwen": {
+    "complete_conditions": 0,
+    "target_conditions": 20,
+    "blocker": "403 model access not enabled"
+  }
+}
