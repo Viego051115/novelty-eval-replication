@@ -1,0 +1,259 @@
+{
+  "cases": [
+    {
+      "row": 1,
+      "id": "1",
+      "a": {
+        "brief": [
+          "协作画图的AI代理",
+          "分析数据、规划图表、编写代码，再检查和改进图表。",
+          "Collaborative chart agents",
+          "Inspect data, plan a chart, write code and refine the visualization."
+        ],
+        "full": "Deep research has revolutionized data analysis, yet data scientists still devote substantial time to manually crafting visualizations, highlighting the need for robust automation from natural language queries. However, current systems struggle with complex datasets containing multiple files and iterative refinement. Existing approaches, including simple single- or multi-agent systems, often oversimplify the task, focusing on initial query parsing while failing to robustly manage data complexity, code errors, or final visualization quality. In this paper, we reframe this challenge as a collaborative multi-agent problem. We introduce CoDA, a multi-agent system that employs specialized LLM agents for metadata analysis, task planning, code generation, and self-reflection. We formalize this pipeline, demonstrating how metadata-focused analysis bypasses token limits and quality-driven refinement ensures robustness. This work demonstrates that the future of visualization automation lies not in isolated code generation but in integrated, collaborative agentic workflows.",
+        "title": "CoDA: Agentic Systems for Collaborative Data Visualization"
+      },
+      "b": {
+        "brief": [
+          "可更新知识的模型",
+          "找出一条事实对应的模型参数，一致地修改它，并尽量避免遗忘。",
+          "Editable model knowledge",
+          "Trace the weights behind a fact and edit knowledge consistently without forgetting."
+        ],
+        "full": "Foundation models encode vast knowledge within their parameters, yet they remain fundamentally static artifacts that cannot efficiently adapt to new information, correct outdated facts, or refine erroneous beliefs without costly retraining. We introduce Neural Knowledge Substrates, a framework that reimagines foundation model weights as dynamically editable knowledge repositories with principled update mechanisms. Our approach combines three key components: (1) a causal tracing methodology that identifies minimal parameter subsets responsible for specific factual or reasoning behaviors, (2) a consistency-preserving editing operator that performs targeted weight updates while maintaining logical coherence across related knowledge, and (3) a meta-learning protocol that enables models to learn how to assimilate new information without catastrophic forgetting. Unlike existing model editing techniques that treat updates as isolated interventions, our framework enforces compositional consistency constraints and propagates changes through knowledge dependency graphs. This enables foundation models to evolve continuously, incorporating new discoveries, correcting misinformation, and refining their world models while preserving their general capabilities—transforming them from static artifacts into living knowledge systems.",
+        "title": "LLM-foundation or frontier models, including LLMs-12"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 1,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 1,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 2,
+      "id": "2",
+      "a": {
+        "brief": [
+          "为长文本节省显存",
+          "利用注意力中的频率信息判断哪些词最重要，只保留关键内容。",
+          "Memory-efficient long context",
+          "Use frequency information in attention to identify and retain important tokens."
+        ],
+        "full": "The deployment of Large Language Models (LLMs) faces a critical bottleneck when handling lengthy inputs: the prohibitive memory footprint of the Key Value (KV) cache. To address this bottleneck, the token pruning paradigm leverages attention sparsity to selectively retain a small, critical subset of tokens. However, existing approaches fall short, with static methods risking irreversible information loss and dynamic strategies employing heuristics that insufficiently capture the query-dependent nature of token importance. We propose FASA, a novel framework that achieves query-aware token eviction by dynamically predicting token importance. FASA stems from a novel insight into RoPE: the discovery of functional sparsity at the frequency-chunk (FC) level. Our key finding is that a small, identifiable subset of \"dominant\" FCs consistently exhibits high contextual agreement with the full attention head. This provides a robust and computationally free proxy for identifying salient tokens. Building on this insight, FASA first identifies a critical set of tokens using dominant FCs, and then performs focused attention computation solely on this pruned subset.",
+        "title": "FASA: FREQUENCY-AWARE SPARSE ATTENTION"
+      },
+      "b": {
+        "brief": [
+          "有选择地学习新知识",
+          "学习哪些模型部件可以更新，哪些应保持稳定，以吸收新信息。",
+          "Selective knowledge updates",
+          "Learn which model components should change and which should stay stable."
+        ],
+        "full": "Foundation models excel at leveraging pre-trained knowledge but struggle to incorporate new information after deployment without costly retraining or architectural modifications. We introduce Selective Neuroplasticity Networks (SNNs), a framework that enables large language models to dynamically assimilate streaming information while preserving their foundational capabilities. Our approach learns a meta-policy that identifies which model components—specific attention heads, feed-forward layers, or parameter subspaces—should adapt to new knowledge versus remain stable. By modeling knowledge integration as a routing problem within the transformer architecture, SNNs create dedicated pathways for new information that minimally interfere with existing representations. The meta-policy is trained via bi-level optimization to maximize both knowledge retention and integration across diverse continual learning scenarios. Unlike retrieval-augmented generation, which maintains external memory, our method internalizes new knowledge directly into model weights through selective, localized updates. This enables foundation models to evolve continuously in deployment, adapting to temporal shifts, user-specific contexts, and private data streams while maintaining their broad pre-trained capabilities across standard benchmarks.",
+        "title": "LLM-foundation or frontier models, including LLMs-14"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 2,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 2,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 0,
+      "id": "0",
+      "a": {
+        "brief": [
+          "按词的重要性调整训练",
+          "结合梯度和位置先验加权训练，再让模型更接近人类偏好的回答。",
+          "Token-weighted preference training",
+          "Weight tokens using gradient attribution and a prior, then optimize toward preferred answers."
+        ],
+        "full": "Aligning Large Language Models (LLMs) with human preferences is crucial for safe and effective AI interactions. While popular methods like Direct Preference Optimization (DPO) have simplified alignment, they remain sensitive to data noise and overlook the differential importance of individual tokens. Existing token-level approaches often rely on probability prediction or simplistic weighting schemes to obtain token importance, which still cannot fully address these issues. To solve this problem, we propose the Token-Importance Guided Direct Preference Optimization (TI-DPO), a framework that achieves fine-grained semantic control through two synergistic innovations. First, we propose a novel hybrid weighting mechanism that combines gradient attribution with a Gaussian prior, ensuring both the accuracy and robustness of token importance scores. Second, we employ a triplet loss to provide structured guidance for the optimization, explicitly guiding model outputs to approach preferred responses and diverge from non-preferred ones.",
+        "title": "Token-Importance Guided Direct Preference Optimization"
+      },
+      "b": {
+        "brief": [
+          "带时间标签的知识模块",
+          "用轻量适配模块存放不同时段的知识，再动态选择和组合这些模块。",
+          "Time-indexed knowledge modules",
+          "Store new knowledge in lightweight time-indexed adapters and compose them dynamically."
+        ],
+        "full": "Foundation models exhibit remarkable capabilities but remain static after pretraining, unable to efficiently incorporate emerging knowledge without expensive retraining or catastrophic forgetting. We introduce Temporal Knowledge Anchoring (TKA), a framework that enables continual knowledge integration in large language models through geometrically-constrained adapter composition. TKA maintains a library of lightweight, temporally-indexed adapter modules, each encoding knowledge from specific time periods or domains. During inference, relevant adapters are dynamically selected and composed using a learned routing mechanism that balances new information integration with preservation of foundational capabilities. The key innovation lies in our geometric anchoring loss, which constrains adapter parameters to lie within specific regions of weight space that provably bound interference with pre-existing knowledge. This allows models to accumulate knowledge over time while maintaining backward compatibility. Unlike retrieval-augmented approaches, TKA internalizes knowledge updates directly into model parameters, enabling efficient inference without external databases. The framework supports both supervised updates from curated sources and self-supervised learning from streaming data, offering a path toward truly evolving foundation models.",
+        "title": "LLM-foundation or frontier models, including LLMs-11"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 0,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 0,
+        "pred": 1,
+        "votes": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 11,
+      "id": "12",
+      "a": {
+        "brief": [
+          "阻止错误在AI之间滚雪球",
+          "传递关键视觉信息并调整注意力，减少一个代理看错后影响其他代理。",
+          "Stop errors spreading across agents",
+          "Relay selected visual evidence and reallocate attention to reduce cascading hallucinations."
+        ],
+        "full": "Multi-Agent System (MAS) powered by Visual Language Models (VLMs) enables challenging tasks but suffers from a novel failure term, multi-agent visual hallucination snowballing, where hallucinations are seeded in a single agent and amplified by following ones due to the over-reliance on textual flow to relay visual information. Through turn-, layer-, and token-wise attention analyses, we provide detailed insights into the essence of hallucination snowballing regarding the reduction of visual attention allocation. It leads us to identify a subset of vision tokens with a unimodal attention peak in middle layers that best preserve visual evidence but gradually diminish in deeper agent turns, resulting in the visual hallucination snowballing in MAS. Thus, we propose ViF, a lightweight, model-agnostic mitigation paradigm that relays inter-agent messages with Visual Flow powered by the selected visual relay tokens and applies attention reallocation to amplify this pattern.",
+        "title": "Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow"
+      },
+      "b": {
+        "brief": [
+          "让模型学出符号推理",
+          "加入可微分瓶颈，让模型自行形成可组合的符号单元。",
+          "Emergent symbolic reasoning",
+          "Use a differentiable bottleneck to encourage reusable symbolic reasoning primitives."
+        ],
+        "full": "We propose Neural Symbolic Emergence (NSE), a novel architecture that enables large language models to learn compositional symbolic reasoning capabilities through emergent internal representations. Rather than imposing predefined symbolic structures, NSE introduces a differentiable bottleneck layer that encourages the model to self-organize discrete, reusable symbolic primitives during standard pretraining. These learned symbols can be dynamically composed and manipulated through attention-based operations that mirror classical symbolic reasoning while remaining fully integrated within the neural framework. The architecture combines continuous representation learning with discrete bottleneck constraints, allowing symbols to emerge naturally from data patterns rather than human specification. By maintaining end-to-end differentiability, NSE preserves the scalability and flexibility of foundation models while enhancing systematic generalization on tasks requiring multi-hop reasoning, logical consistency, and compositional understanding. This approach bridges neural and symbolic paradigms without requiring explicit symbolic supervision, offering a path toward more robust and interpretable reasoning in future foundation models.",
+        "title": "LLM-foundation or frontier models, including LLMs-7"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 11,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 11,
+        "pred": null,
+        "votes": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 6,
+      "id": "6",
+      "a": {
+        "brief": [
+          "检查强化训练是否让AI过早冒险",
+          "比较不同训练方法，发现平均表现提高也可能伴随过早放弃探索。",
+          "When training makes agents too greedy",
+          "Study how training can improve average performance while making agents abandon exploration too early."
+        ],
+        "full": "While Large Language Models (LLMs) hold promise to become autonomous agents, they often explore suboptimally in sequential decision-making. Recent work has sought to enhance this capability via supervised fine-tuning (SFT) or reinforcement learning (RL), improving regret on the classic multi-armed bandit task. However, it remains unclear how these learning methods shape exploration strategies and how well they generalize. We investigate both paradigms by training LLMs with SFT on expert trajectories and RL with a range of tailored reward signals including a strategic, regret-shaped reward to reduce variance, and an algorithmic reward that enables oracle imitation. Behavioral analysis reveals that gains often stem from more sophisticated but greedier exploitation: RL/SFT agents are more prone to early catastrophic failure than pre-trained models, prematurely abandoning exploration. Furthermore, agents trained to imitate UCB learn to outperform their teacher by adopting more exploitative variants. Our findings clarify when each training paradigm is preferable and advocate tailored reward design and evaluation beyond average regret to promote robust exploratory behavior.",
+        "title": "When Greedy Wins: Emergent Exploitation Bias in Meta-Bandit LLM Training"
+      },
+      "b": {
+        "brief": [
+          "给模型可组合的推理部件",
+          "通过对比训练、干预和路由，让模型组合可复用的推理操作。",
+          "Composable reasoning components",
+          "Combine contrastive training, interventions and routing to learn reusable reasoning operations."
+        ],
+        "full": "Foundation models demonstrate impressive capabilities yet lack interpretable, compositional reasoning structures. We propose Modular Reasoning Primitives (MRP), a framework for training large language models to develop explicit, reusable reasoning components that can be flexibly composed across diverse cognitive tasks. Rather than learning monolithic task-specific behaviors, MRP introduces architectural constraints and specialized pre-training objectives that encourage the emergence of atomic reasoning operations—such as deductive inference, analogical mapping, and causal attribution—as discrete, steerable modules within the model's computation graph. Our approach combines contrastive learning over reasoning traces, intervention-based training that isolates individual reasoning steps, and a routing mechanism that dynamically selects and chains appropriate primitives for each query. This modular structure enables systematic generalization to novel reasoning compositions, provides interpretable intermediate states for analysis and debugging, and allows targeted improvement of specific reasoning capabilities without full model retraining. MRP represents a step toward foundation models with human-aligned cognitive architectures.",
+        "title": "LLM-foundation or frontier models, including LLMs-2"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 6,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 6,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    }
+  ]
+}
