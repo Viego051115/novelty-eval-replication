@@ -254,6 +254,516 @@
         ],
         "expected": 0
       }
+    },
+    {
+      "row": 4,
+      "id": "4",
+      "a": {
+        "brief": [
+          "小模型也能学推理",
+          "筛选和重采样高质量训练数据，探索较小模型与较少数据能否形成推理能力。",
+          "Reasoning with smaller models",
+          "Curate and resample high-quality data to study reasoning in sub-billion-parameter models."
+        ],
+        "full": "The paradigm shift in large language models (LLMs) from instinctive responses to chain-of-thought (CoT) reasoning has fueled two prevailing assumptions: (1) reasoning capabilities only emerge in sufficiently large models, and (2) such capabilities require training on massive datasets. While the first assumption has already been challenged by recent sub-billion-parameter reasoning models such as Qwen3-0.6B and DeepSeek distilled variants, the second remains largely unquestioned. In this work, we revisit the necessity of scaling to extremely large corpora (>10T tokens) for reasoning emergence. By carefully curating and resampling open-source datasets that we identify as beneficial under our designed metrics, we demonstrate that strong reasoning abilities can emerge with far less data. Specifically, we show that only ~2T tokens of high-quality data are sufficient, and pre-training with 4.2T tokens on the dataset resampled from these ~2T tokens, followed by an established post-training procedure, enables the development of MobileLLM-R1, a series of sub-billion-parameter reasoning models. To facilitate further research in this direction, we have made the models and code publicly available, along with the complete training recipe, data sources, and data mixing ratios.",
+        "title": "MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes"
+      },
+      "b": {
+        "brief": [
+          "给模型嫁接知识",
+          "添加可独立组合的小模块，让模型吸收新知识而不必整体重训。",
+          "Grafting new knowledge",
+          "Compose lightweight knowledge-update modules rather than retraining the entire model."
+        ],
+        "full": "Foundation models require frequent updates to incorporate new knowledge, correct errors, and adapt to evolving domains, yet full-scale retraining remains computationally prohibitive. We introduce Compositional Model Grafting, a framework that enables surgical updates to foundation models through dynamically composable knowledge modules. Rather than fine-tuning monolithic parameters, our approach learns lightweight graft modules—small neural components encoding specific knowledge updates—alongside a compositional router that learns to invoke and combine grafts based on input context. The router employs a structured attention mechanism over a library of grafts, enabling systematic generalization through explicit composition of atomic knowledge units. Grafts can be added, removed, or modified independently without affecting the base model or other modules, preventing catastrophic forgetting while supporting continuous knowledge injection. This modular architecture naturally handles conflicting updates through learned routing policies and enables interpretable attribution of model outputs to specific knowledge sources, addressing key challenges in foundation model maintenance and governance.",
+        "title": "LLM-foundation or frontier models, including LLMs-10"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 4,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 4,
+        "pred": 1,
+        "votes": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 5,
+      "id": "5",
+      "a": {
+        "brief": [
+          "一边学词一边学概念",
+          "在预测下一个词的同时，预测连续概念，并把概念混入内部表示。",
+          "Learning tokens and concepts",
+          "Combine next-token prediction with continuous concepts mixed into hidden representations."
+        ],
+        "full": "Next token prediction has been the standard training objective used in large language model pretraining. Representations are learned as a result of optimizing for token-level perplexity. We propose Continuous Concept Mixing (CoCoMix), a novel pretraining framework that combines discrete next token prediction with continuous concepts. Specifically, CoCoMix predicts \"continuous concepts\" learned from a pretrained sparse autoencoder and mixes them into the model's hidden state by interleaving with token hidden representations. We find that combining both concept learning and interleaving in an end-to-end framework is critical to performance gains. Furthermore, CoCoMix enhances interpretability and steerability by allowing direct inspection and modification of the predicted concept, offering a transparent way to guide the model's internal reasoning process.",
+        "title": "LLM Pretraining with Continuous Concepts"
+      },
+      "b": {
+        "brief": [
+          "给模型符号草稿纸",
+          "让模型在推理时建立知识图谱、约束或逻辑结构，辅助可检查的推理。",
+          "A symbolic scratchpad",
+          "Construct symbolic structures such as graphs and constraints during reasoning."
+        ],
+        "full": "We introduce Neurosymbolic Scaffolding, a framework that augments foundation models with the ability to dynamically construct and reason over explicit symbolic structures during inference. While large language models excel at pattern recognition and generation, they struggle with tasks requiring verifiable logical reasoning, systematic composition, and adherence to formal constraints. Our approach addresses this by introducing a lightweight learned module that enables models to externalize intermediate reasoning steps into structured symbolic representations—including knowledge graphs, constraint satisfaction problems, and logic programs—while maintaining end-to-end differentiability. The symbolic scaffold operates as a scratchpad where the model can perform explicit operations guided by learned policies, bridging the gap between neural fluency and symbolic rigor. Through parameter-efficient adaptation, we integrate this capability into pre-trained foundation models without full retraining. This neurosymbolic extension enables provable correctness guarantees, interpretable reasoning traces, and natural incorporation of domain expertise through symbolic constraints, while preserving the models' general-purpose capabilities and scaling properties. Our framework opens new possibilities for trustworthy AI systems that combine the flexibility of neural networks with the verifiability of symbolic reasoning.",
+        "title": "LLM-foundation or frontier models, including LLMs-4"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 5,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 5,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 7,
+      "id": "7",
+      "a": {
+        "brief": [
+          "让模型边推理边自检",
+          "用生成与验证两条处理流，同时产出推理步骤并检查其中的问题。",
+          "Reasoning with self-checks",
+          "Couple generation and verification streams to check intermediate reasoning."
+        ],
+        "full": "We introduce Reflexive Reasoning Networks, a framework that endows large language models with internalized verification capabilities for multi-step reasoning tasks. Rather than relying on external verifiers or outcome-based supervision, our approach trains models to simultaneously generate reasoning traces and evaluate their logical coherence through a dual-stream architecture. A generation stream produces step-by-step solutions while a verification stream assesses intermediate steps for logical consistency, factual accuracy, and relevance. These streams are coupled through a contrastive objective that encourages the model to distinguish valid reasoning paths from subtly flawed alternatives generated through controlled perturbations of its own outputs. Crucially, verification signals emerge from the model's internal representations rather than external labels, enabling sample-efficient learning of metacognitive skills. The framework operates through iterative refinement loops where verification assessments guide selective regeneration of problematic reasoning steps. This approach bridges the gap between current foundation models' generative capabilities and the self-corrective reasoning exhibited by human experts, opening pathways toward more reliable and interpretable AI systems.",
+        "title": "LLM-foundation or frontier models, including LLMs-17"
+      },
+      "b": {
+        "brief": [
+          "让AI代理按成本交易信息",
+          "把不确定性分成可交换的信息，由协调者决定何时合作更划算。",
+          "A market for agent information",
+          "Coordinate agents by trading structured uncertainty under explicit cost considerations."
+        ],
+        "full": "Vision-Language Models (VLMs) enable powerful multi-agent systems, but scaling them is economically unsustainable: coordinating heterogeneous agents under information asymmetry often spirals costs. Existing paradigms, such as Mixture-of-Agents and knowledge-based routers, rely on heuristic proxies that ignore costs and collapse uncertainty structure, leading to provably suboptimal coordination.\nWe introduce Agora, a framework that reframes coordination as a decentralized market for uncertainty. Agora formalizes epistemic uncertainty into a structured, tradable asset (perceptual, semantic, inferential), and enforces profitability-driven trading among agents based on rational economic rules. A market-aware broker, extending Thompson Sampling, initiates collaboration and guides the system toward cost-efficient equilibria. Agora establishes market-based coordination as a principled and scalable paradigm for building economically viable multi-agent visual intelligence systems.",
+        "title": "Why Keep Your Doubts to Yourself? Trading Visual Uncertainties among Vision-Language Models"
+      },
+      "expected": 1,
+      "p3": {
+        "i": 7,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      "p4": {
+        "i": 7,
+        "pred": 1,
+        "votes": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      }
+    },
+    {
+      "row": 8,
+      "id": "8",
+      "a": {
+        "brief": [
+          "修正视觉与文字的不平衡",
+          "分析图像与文字特征尺度不一致造成的信息损失，并用归一化层对齐。",
+          "Aligning image and text features",
+          "Analyze scale mismatch between visual and text tokens, then align them with normalization."
+        ],
+        "full": "Multimodal Large Language Models (MLLMs), which couple pre-trained vision encoders and language models, have shown remarkable capabilities. However, their reliance on the ubiquitous Pre-Norm architecture introduces a subtle yet critical flaw: a severe norm disparity between the high-norm visual tokens and the low-norm text tokens. In this work, we present a formal theoretical analysis demonstrating that this imbalance is not a static issue. Instead, it induces an \"asymmetric update dynamic\", where high-norm visual tokens exhibit a ''representational inertia,'' causing them to transform semantically much slower than their textual counterparts. This fundamentally impairs effective cross-modal feature fusion. Our empirical validation across a range of mainstream MLLMs confirms that this theoretical dynamic---the persistence of norm disparity and the resulting asymmetric update rates---is a prevalent phenomenon. Based on this insight, we propose a remarkably simple yet effective solution: inserting a single, carefully initialized LayerNorm layer after the visual projector to enforce norm alignment, suggesting that resolving the architectural imbalance leads to a more holistically capable model.",
+        "title": "The Unseen Bias: How Norm Discrepancy in Pre-Norm MLLMs Leads to  Visual  Information Loss"
+      },
+      "b": {
+        "brief": [
+          "给模型轻量信心模块",
+          "用小适配模块估计模型不知道什么，再辅助拒答和选择生成路径。",
+          "Lightweight uncertainty modules",
+          "Estimate uncertainty with small adapters to support abstention and generation choices."
+        ],
+        "full": "Foundation models demonstrate impressive capabilities but lack principled mechanisms for uncertainty quantification, leading to overconfident predictions and hallucinations on out-of-distribution inputs. We introduce Epistemic Adapters, a parameter-efficient framework that retrofits pretrained large language models with explicit uncertainty awareness. Our approach learns lightweight adapter modules that map internal activations to calibrated epistemic uncertainty estimates without modifying the base model weights. During inference, these uncertainty representations enable the model to distinguish between confident knowledge recall, uncertain reasoning, and complete ignorance. The framework supports three key capabilities: selective abstention on high-uncertainty queries, uncertainty-guided beam search that favors lower-entropy generation paths, and active learning mechanisms that identify informative examples for human feedback. By decoupling uncertainty estimation from the primary forward pass, Epistemic Adapters maintain generation quality while providing interpretable confidence scores. This work establishes a foundation for more reliable and transparent deployment of frontier models in high-stakes applications where knowing what the model doesn't know is as critical as what it does.",
+        "title": "LLM-foundation or frontier models, including LLMs-0"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 8,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 8,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 10,
+      "id": "11",
+      "a": {
+        "brief": [
+          "让知识有时间通道",
+          "为不同时期的知识建立处理通道，再按问题选择或组合。",
+          "Time-aware knowledge channels",
+          "Route questions through lightweight channels representing different temporal states."
+        ],
+        "full": "Large language models struggle with temporal knowledge dynamics, treating information as static despite operating in a world where facts, scientific understanding, and societal contexts continuously evolve. We introduce Temporal Knowledge Channels (TKC), a novel architecture that extends foundation models with parallel processing pathways encoding knowledge at different temporal states. Unlike retrieval-augmented approaches that externalize temporal information, TKC embeds temporal awareness directly into the model's computation graph through learned gating mechanisms that route queries through temporally-appropriate knowledge channels. Each channel maintains a lightweight adapter layer trained on time-stamped corpora, while a temporal reasoning module learns to select and compose information across channels based on explicit or inferred temporal context. This architecture enables models to reason about knowledge evolution, answer counterfactual historical queries, and maintain multiple valid but temporally-distinct world models simultaneously. TKC preserves the general capabilities of the base foundation model while adding structured temporal reasoning, offering a path toward continually-learning systems that understand not just what is true, but when it became true and how knowledge changes over time.",
+        "title": "LLM-foundation or frontier models, including LLMs-3"
+      },
+      "b": {
+        "brief": [
+          "测量模型用了多少推理",
+          "比较完整模型与浅层预测头的输出差异，分析并调节生成过程。",
+          "Measuring reasoning effort",
+          "Compare full and shallow prediction distributions to measure and steer computation."
+        ],
+        "full": "Measuring the in-context computational effort of language models is a key challenge, as metrics like next-token loss fail to capture reasoning complexity. Prior methods based on latent state compressibility can be invasive and unstable. We propose Multiple Token Divergence (MTD), a simple measure of computational effort defined as the KL divergence between a model's full output distribution and that of a shallow, auxiliary prediction head. MTD can be computed directly from pre-trained models with multiple prediction heads, requiring no additional training. Building on this, we introduce Divergence Steering, a novel decoding method to control the computational character of generated text. MTD provides a practical, lightweight tool for analyzing and steering the computational dynamics of language models.",
+        "title": "Multiple Token Divergence: Measuring and Steering In-Context Computation Density"
+      },
+      "expected": 1,
+      "p3": {
+        "i": 10,
+        "pred": null,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      "p4": {
+        "i": 10,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 1
+      }
+    },
+    {
+      "row": 12,
+      "id": "13",
+      "a": {
+        "brief": [
+          "从内部轨迹估计不确定性",
+          "观察各层隐藏表示如何变化，用轻量预测器判断回答的不确定性。",
+          "Uncertainty from internal trajectories",
+          "Estimate uncertainty from geometric changes in hidden representations across layers."
+        ],
+        "full": "Large language models generate fluent responses even when uncertain, producing hallucinations that undermine trust in high-stakes applications. Existing uncertainty quantification methods rely on expensive ensembles, multiple sampling passes, or external verifiers that scale poorly with model size. We introduce Layerwise Uncertainty Estimation (LUE), a principled framework that exploits the hierarchical representation structure within transformer-based foundation models to estimate epistemic uncertainty at inference time with minimal overhead. Our approach constructs uncertainty signals by analyzing the geometric properties of hidden state trajectories across layers, capturing how semantic refinement and representational consistency evolve during the forward pass. We identify that uncertainty manifests as increased trajectory curvature and reduced cross-layer alignment in regions where the model extrapolates beyond its training distribution. By learning a lightweight uncertainty predictor on these geometric features through self-supervised pretraining on diverse prompts, LUE provides calibrated confidence scores without modifying the base model or requiring labeled uncertainty data, enabling selective abstention and improved reliability in open-domain question answering, medical diagnosis, and code generation scenarios.",
+        "title": "LLM-foundation or frontier models, including LLMs-5"
+      },
+      "b": {
+        "brief": [
+          "加速记忆型模型训练",
+          "先用分层记忆提高并行训练效率，再通过短暂微调恢复推理表现。",
+          "Faster training for memory models",
+          "Use hierarchical memory for efficient parallel pretraining followed by brief fine-tuning."
+        ],
+        "full": "Recurrent neural networks (RNNs) with deep test-time memorization modules, such as Titans and TTT, represent a promising, linearly-scaling paradigm distinct from Transformers. While these expressive models do not yet match the peak performance of state-of-the-art Transformers, their potential has been largely untapped due to prohibitively slow training and low hardware utilization.\nExisting parallelization methods force a fundamental conflict governed by the chunksize hyperparameter: large chunks boost speed but degrade performance, necessitating a fixed, suboptimal compromise. To solve this challenge, we introduce TNT, a novel training paradigm that decouples training efficiency from inference performance through a two-stage process. Stage one is an efficiency-focused pre-training phase utilizing a hierarchical memory. A global module processes large, hardware-friendly chunks for long-range context, while multiple parallel local modules handle fine-grained details. Crucially, by periodically resetting local memory states, we break sequential dependencies to enable massive context parallelization. Stage two is a brief fine-tuning phase where only the local memory modules are adapted to a smaller, high-resolution chunksize, maximizing accuracy with minimal overhead. This approach removes a critical scalability barrier, establishing a practical foundation for developing expressive RNNs and facilitating future work to close the performance gap with Transformers.",
+        "title": "TNT: Improving Chunkwise Training for Test-Time Memorization"
+      },
+      "expected": 1,
+      "p3": {
+        "i": 12,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      "p4": {
+        "i": 12,
+        "pred": 1,
+        "votes": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      }
+    },
+    {
+      "row": 13,
+      "id": "14",
+      "a": {
+        "brief": [
+          "让知识的信心随时间变化",
+          "从带时间的信息中学习知识如何演变，区别稳定与容易过时的知识。",
+          "Confidence as knowledge ages",
+          "Learn temporal patterns to distinguish stable knowledge from information that may become outdated."
+        ],
+        "full": "Foundation models encode vast amounts of knowledge but struggle with temporal reasoning about knowledge evolution and principled uncertainty quantification over time. We introduce Temporal Epistemic Adaptation (TEA), a framework that augments large language models with explicit meta-learning over knowledge dynamics. Rather than treating information as static, TEA trains models to recognize and internalize patterns in how knowledge evolves—including scientific consensus shifts, terminology drift, and the refinement of causal models across domains. By learning these meta-patterns during pre-training on temporally-annotated corpora, the model develops structured priors for reasoning about epistemic uncertainty and knowledge decay. TEA enables foundation models to explicitly represent confidence bounds that degrade appropriately with temporal distance, distinguish stable from volatile knowledge domains, and generate calibrated predictions about information currency. This approach transforms static knowledge retrieval into dynamic epistemic reasoning, allowing models to better characterize the boundaries of their knowledge and adapt their responses based on learned patterns of how different types of information change over time.",
+        "title": "LLM-foundation or frontier models, including LLMs-6"
+      },
+      "b": {
+        "brief": [
+          "研究纯文字训练里的视觉能力",
+          "分析语言模型为何没看过图像也有视觉知识，并区分感知与推理来源。",
+          "Visual abilities learned from text",
+          "Separate perception and reasoning priors that emerge during language pretraining."
+        ],
+        "full": "Large Language Models (LLMs), despite being trained on text alone, surprisingly develop rich visual priors. These priors allow latent visual capabilities to be unlocked for vision tasks with a relatively small amount of multimodal data, and to perform symbolic visual generation tasks without ever having seen an image. Through systematic analysis, we reveal that visual priors—the implicit, emergent knowledge about the visual world acquired during language pre-training—are composed of separable perception and reasoning priors with unique scaling trends and origins. We show that an LLM's latent visual reasoning ability is predominantly developed by pre-training on reasoning-centric data (e.g., code, math, academia) and scales progressively. This reasoning prior acquired from language pre-training is transferable and universally applicable to visual reasoning. In contrast, the perception prior emerges more diffusely from broad corpora, and perception ability is more sensitive to the vision encoder and visual instruction tuning data. In parallel, text describing the visual world proves crucial, though its performance impact saturates rapidly. Leveraging these insights, we propose a data-centric recipe for pre-training vision-aware LLMs. Our findings are grounded in over 100 controlled experiments consuming 500,000 GPU-hours, spanning the full MLLM construction pipeline—from LLM pre-training to visual alignment and supervised multimodal fine-tuning—across five model scales, a wide range of data categories and mixtures, and multiple adaptation setups. Along with our main findings, we also propose and investigate several hypotheses, and introduce a Multi-Level Existence Bench (MLE-Bench) to facilitate future research. Together, this work provides a new way of deliberately cultivating visual priors from language pre-training, paving the way for the next generation of multimodal LLMs.",
+        "title": "Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training"
+      },
+      "expected": 1,
+      "p3": {
+        "i": 13,
+        "pred": 1,
+        "votes": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      "p4": {
+        "i": 13,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 1
+      }
+    },
+    {
+      "row": 14,
+      "id": "15",
+      "a": {
+        "brief": [
+          "压缩大型专家模型",
+          "把专家权重分解为专属部分与共享基矩阵的组合，减少部署内存。",
+          "Compressing expert models",
+          "Factor expert weights into individual components and shared basis matrices."
+        ],
+        "full": "The Mixture-of-Experts (MoE) architecture has become a predominant paradigm for scaling large language models (LLMs). Despite offering strong performance and computational efficiency, large MoE-based LLMs like DeepSeek-V3-0324 and Kimi-K2-Instruct present serious challenges due to substantial memory requirements in deployment. While recent works have explored MoE compression to address this issue, existing methods often suffer from considerable accuracy drops even at modest compression rates. This paper introduces a novel Mixture-of-Basis-Experts (MoBE) method that achieves model compression while incurring minimal accuracy drops. Specifically, each up/gate matrix in an expert is decomposed via a rank decomposition as W = AB, where matrix A is unique to each expert. The relatively larger matrix B is further reparameterized as a linear combination of basis matrices {Bi} shared across all experts within a given MoE layer. The factorization is learned by minimizing the reconstruction error relative to the original weight matrices.",
+        "title": "MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs"
+      },
+      "b": {
+        "brief": [
+          "让知识沿时间更新",
+          "用带有效期的知识图谱和轻量模块更新相关事实，并维持一致性。",
+          "Updating facts over time",
+          "Use time-stamped knowledge and lightweight interventions to update related facts consistently."
+        ],
+        "full": "Foundation models encode vast knowledge within their parameters, yet this knowledge remains static after pretraining, creating a growing gap between model capabilities and an evolving world. We introduce Temporal Knowledge Modulation (TKM), a framework enabling foundation models to continuously integrate new factual knowledge without catastrophic forgetting or full retraining. TKM augments pretrained LLMs with a lightweight temporal knowledge module that learns to modulate internal representations based on structured knowledge graphs timestamped with validity periods. Unlike retrieval-augmented generation, which provides external context, our approach updates the model's parametric knowledge through targeted interventions in the representation space. The temporal module learns consistency constraints that propagate updates across semantically related facts, ensuring logical coherence as knowledge evolves. By separating stable general-purpose capabilities from dynamic factual knowledge, TKM enables models to track scientific discoveries, world events, and domain-specific information streams while preserving their original competencies. This paradigm shift from static to dynamic parametric knowledge opens new possibilities for maintaining relevant, up-to-date foundation models in rapidly changing domains.",
+        "title": "LLM-foundation or frontier models, including LLMs-8"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 14,
+        "pred": 1,
+        "votes": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 14,
+        "pred": null,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 15,
+      "id": "16",
+      "a": {
+        "brief": [
+          "让AI边推理边生成记忆",
+          "监控何时需要回忆，再生成潜在记忆序列辅助当前推理。",
+          "Generating memory during reasoning",
+          "Trigger memory when needed and weave latent memory sequences into ongoing reasoning."
+        ],
+        "full": "Agent memory shapes how Large Language Model (LLM)-powered agents, akin to the human brain, progressively refine themselves through environment interactions. Existing paradigms remain constrained: parametric memory forcibly adjusts model parameters, and retrieval-based memory externalizes experience into structured databases, yet neither captures the fluid interweaving of reasoning and memory that underlies human cognition. To address this gap, we propose MemGen, a dynamic generative memory framework that equips agents with a human-esque cognitive faculty. It consists of a \\textit{memory trigger}, which monitors the agent's reasoning state to decide explicit memory invocation, and a \\textit{memory weaver}, which takes the agent's current state as stimulus to construct a latent token sequence as machine-native memory to enrich its reasoning. In this way, MemGen enables agents to recall and augment latent memory throughout reasoning, producing a tightly interwoven cycle of memory and cognition. More importantly, we find that without explicit supervision, MemGen spontaneously evolves distinct human-like memory faculties, including planning memory, procedural memory, and working memory, suggesting an emergent trajectory toward more naturalistic forms of machine cognition.",
+        "title": "MemGen: Weaving Generative Latent Memory for Self-Evolving Agents"
+      },
+      "b": {
+        "brief": [
+          "让模型复用推理模板",
+          "学习和检索抽象解题结构，再把它们用于新的问题。",
+          "Reusable reasoning templates",
+          "Learn and retrieve abstract reasoning schemas for new problem instances."
+        ],
+        "full": "We introduce Schema-Grounded Language Models, a novel architecture that enhances foundation models with explicit mechanisms for learning and applying abstract reasoning patterns. While contemporary LLMs excel at pattern matching and surface-level associations, they struggle with systematic generalization and compositional reasoning tasks that require principled abstraction. Our approach augments transformer-based models with a schema memory module that automatically extracts, encodes, and retrieves reusable reasoning templates from training data and in-context examples. During inference, the model dynamically conditions its generation on retrieved schemas, adapting them to novel problem instances through a lightweight cross-attention mechanism. This modular design enables explicit separation between learning abstract problem structures and instantiating them with specific content, facilitating better out-of-distribution generalization. The schema representations remain differentiable and are jointly optimized with the language model, preserving end-to-end trainability while introducing structured inductive biases. By bridging neural flexibility with compositional reasoning, our framework addresses fundamental limitations in how foundation models handle abstraction, logical consistency, and knowledge transfer across diverse reasoning domains.",
+        "title": "LLM-foundation or frontier models, including LLMs-1"
+      },
+      "expected": 0,
+      "p3": {
+        "i": 15,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      },
+      "p4": {
+        "i": 15,
+        "pred": 0,
+        "votes": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected": 0
+      }
+    },
+    {
+      "row": 16,
+      "id": "17",
+      "a": {
+        "brief": [
+          "给模型添加可组合技能",
+          "通过轻量技能模块、路由和元学习，快速改变模型的行为与推理方式。",
+          "Composable model skills",
+          "Use lightweight skill modules, routing and meta-learning to adapt model behavior."
+        ],
+        "full": "Foundation models excel at general-purpose tasks but struggle to adapt their reasoning strategies and behavioral patterns without costly retraining. While retrieval-augmented generation addresses factual knowledge gaps, it cannot inject new cognitive skills or modify inferential processes. We propose Meta-Modular Foundation Models, a framework that treats pre-trained LLMs as computational substrates augmented with dynamically composable skill modules. These lightweight modules—implemented as context-dependent routing mechanisms and specialized adapter networks—enable rapid behavioral adaptation while preserving core capabilities. Our approach introduces a meta-learning protocol that allows models to internalize new reasoning patterns from minimal task demonstrations, selectively activating relevant skill modules during inference. Unlike fine-tuning, which entangles new knowledge with existing parameters, our architecture maintains explicit separation between general-purpose representations and specialized computational pathways. This enables continuous capability expansion, domain-specific customization, and multi-tenant deployments where different users access distinct skill compositions from a shared foundation model. Meta-Modular Foundation Models provide a path toward truly adaptive AI systems that evolve their behavioral repertoire without sacrificing generality or requiring prohibitive computational resources.",
+        "title": "LLM-foundation or frontier models, including LLMs-18"
+      },
+      "b": {
+        "brief": [
+          "挑出更有价值的推理数据",
+          "提炼可复用推理模式，再结合模式链与词的不确定性筛选训练数据。",
+          "Selecting valuable reasoning data",
+          "Extract reusable reasoning patterns and use them to select informative training examples."
+        ],
+        "full": "Recent progress in large reasoning models for challenging mathematical reasoning has been driven by reinforcement learning (RL). Incorporating long chain-of-thought (CoT) data during mid-training has also been shown to substantially improve reasoning depth. However, current approaches often utilize CoT data indiscriminately, leaving open the critical question of which data types most effectively enhance model reasoning capabilities. In this paper, we define the foundation model's reasoning potential for the first time as the inverse of the number of independent attempts required to correctly answer the question, which is strongly correlated with the final model performance. We then propose utilizing diverse data enriched with high-value reasoning patterns to expand the reasoning potential. Specifically, we abstract atomic reasoning patterns from CoT sequences, characterized by commonality and inductive capabilities, and use them to construct a core reference set enriched with valuable reasoning patterns. Furthermore, we propose a dual-granularity algorithm involving chains of reasoning patterns and token entropy, efficiently selecting high-value CoT data (CoTP) from the data pool that aligns with the core set, thereby training models to master reasoning effectively.",
+        "title": "Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns"
+      },
+      "expected": 1,
+      "p3": {
+        "i": 16,
+        "pred": null,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      "p4": {
+        "i": 16,
+        "pred": null,
+        "votes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 1
+      }
     }
   ]
 }

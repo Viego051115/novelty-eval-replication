@@ -1,10 +1,10 @@
 # Novelty Lab
 
-An offline, bilingual teaching game built around five selected saved DeepSeek judgments. Open `docs/index.html` directly, or use the repository GitHub Pages site when available. All CSS, scripts and case data are embedded. No API keys, model calls or external scripts are used.
+An offline, bilingual teaching game built around fifteen selected saved DeepSeek judgments. Open `docs/index.html` directly, or use the repository GitHub Pages site when available. All CSS, scripts and case data are embedded. No API keys, model calls or external scripts are used.
 
 ## Three sections
 
-1. Be the judge: choose an idea, reveal P3, predict whether P4 keeps or changes the winner or ties. Points reward predictions of judge behavior, not true novelty judgments. Five selected cases comprise two flips, two stable results and one tie; they do not estimate a population flip rate.
+1. Be the judge: choose an idea, reveal P3, predict whether P4 keeps or changes the winner or ties. Points reward predictions of judge behavior, not true novelty judgments. Fifteen selected cases comprise three flips, eight stable results and four cases with at least one tie; they do not estimate a population flip rate.
 2. Rule laboratory: display saved aggregate results for prompt framing, voting, idea format and generator source. Benchmark agreement is not verified originality. P3 and P4 differ in target framing as well as wording.
 3. Research flow: step through the controlled study, the use case and the proposed follow-up. Future work is marked not validated. Six bilingual SVG files are in `docs/flows`.
 
