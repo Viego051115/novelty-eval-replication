@@ -3,6 +3,7 @@ import argparse, hashlib, json, time, urllib.request, urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 import pandas as pd
+import http.client
 from programs.paths import PROJECT_ROOT as ROOT
 from programs.core.harness2 import ENV, PROMPTS
 from programs.experiments.run_matrix import metrics_pair, metrics_point
@@ -68,7 +69,7 @@ def main():
     raw=e.read();err=raw.decode('utf-8',errors='replace');rec.update(ended_utc=now(),http_status=e.code,error=err);append(journal,rec)
     print(json.dumps({'provider':a.provider,'http':e.code,'attempt':attempt+1,'error':err},ensure_ascii=True),flush=True)
     if e.code in [400,401,402,403,404]:raise RuntimeError(f'Provider blocked: HTTP {e.code}')
-   except (TimeoutError, OSError) as e:
+   except (TimeoutError, OSError, http.client.HTTPException, json.JSONDecodeError) as e:
     rec.update(ended_utc=now(),error=type(e).__name__);append(journal,rec)
    time.sleep(min(10*(attempt+1),50))
   raise RuntimeError('Seven attempts unsuccessful; stopped without fabricating a verdict.')
@@ -79,6 +80,7 @@ def main():
    suffix='_plan' if c['variant']=='plan' else ''
    data=ROOT/'data'/f"{c['setting']}_{c['protocol']}{suffix}.parquet"; rows=pd.read_parquet(data).to_dict('records')
    out=folder/(c['id']+'.jsonl');done={r['i']:r for r in records(out) if not r.get('failed')}
+   (folder/'status.json').write_text(json.dumps({'updated_utc':now(),'state':'running','completed_conditions':len(summary),'target_conditions':len(manifest),'last_condition':c['id'],'last_items':len(done),'last_target':len(rows),'resumed_at_config_start':True},indent=2),encoding='utf-8')
    for i,row in enumerate(rows):
     if i in done:continue
     if a.provider=='deepseek':

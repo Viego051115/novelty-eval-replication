@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-07",
+  "event": "resume_after_network_exception_fix",
+  "existing_validated_configs": 40,
+  "new_effort_completed_configs": 0,
+  "new_effort_target_configs": 8,
+  "first_condition_complete_pairs": 138,
+  "first_condition_target_pairs": 154,
+  "fix": "Retry incomplete HTTP response and malformed JSON with the existing bounded retry loop; preserve valid vote cache; write running state on resume."
+}
